@@ -1,0 +1,7 @@
+[user]
+	email = matkobusljeta@gmail.com
+	name = Matko
+[credential]
+	helper = store
+[core]
+	autocrlf = input
