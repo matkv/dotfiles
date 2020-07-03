@@ -29,7 +29,3 @@ lrwxrwxrwx   1 matko matko    23  3. Jul 23:11 .gitconfig -> dotfiles/git/.gitco
 ```
 
 If I would want to use this on a new computer, I just need to clone this repository, install stow and run the `stow -v -R -t ~ git` command inside my dotfiles directory and it would would automatically create the `.gitconfig` (and all other files in the git folder) inside my home directory.
-
-# TODO
-
-Continue with tutorial: (https://writingco.de/blog/how-i-manage-my-dotfiles-using-gnu-stow/)[https://writingco.de/blog/how-i-manage-my-dotfiles-using-gnu-stow/]
