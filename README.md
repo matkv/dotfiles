@@ -1,5 +1,10 @@
 # dotfiles
 
+Update: 23.10.2021 - maybe use [this](https://www.youtube.com/watch?v=tBoLDpTWVOM&t=829s) tutorial which uses a git bare repository? Or use something that uses symlinks in order to link the actual files and the files in the .dotfiles repository?
+
+---
+
+
 This is my first try of using a dotfiles repository. The dotfiles are managed by [GNU Stow](https://www.gnu.org/software/stow/).
 
 At the moment this repository does not yet contain all my dotfiles - this is a work in progress.
