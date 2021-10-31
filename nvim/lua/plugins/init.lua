@@ -4,4 +4,10 @@ return require('packer').startup(function()
     
     -- Nord color scheme
     use 'shaunsingh/nord.nvim'
+
+    -- Treesitter syntax highlighting
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }	
 end)
