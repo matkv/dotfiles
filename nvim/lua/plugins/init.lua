@@ -14,9 +14,18 @@ return require('packer').startup(function()
     --- Icons used by lualine
     use 'kyazdani42/nvim-web-devicons'
 
-    -- Lualine statusline
+    --- Lualine statusline
     use {
 	'nvim-lualine/lualine.nvim',
 	requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
+
+    --- Nvim tree file explorer
+    use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function() require'nvim-tree'.setup {} end
+}
+
+
 end)
