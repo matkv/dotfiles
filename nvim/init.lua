@@ -15,6 +15,8 @@ vim.cmd('colorscheme gruvbox')	--set colorscheme to gruvbox
 
 vim.cmd[[au VimEnter * NvimTreeOpen]]
 vim.cmd[[au VimEnter * wincmd p]]
+vim.cmd[[au VimEnter * new]]
+vim.cmd[[au VimEnter * wincmd p]]
 vim.cmd[[au VimEnter * terminal]]
 vim.cmd[[au VimEnter * wincmd k]]
 vim.cmd[[au VimEnter * vsplit new]]
