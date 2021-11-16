@@ -1,6 +1,7 @@
 # dotfiles
 ## Doom Emacs
 
+### Installation
 [Installation & Prerequisities](https://github.com/hlissner/doom-emacs#install)
 
 ```
@@ -29,6 +30,18 @@ export PATH=”$HOME/.emacs.d/bin:$PATH”
 Then run ```doom doctor``` to see if anything is still wrong. 
 
 In my case, the ```shellcheck``` package was missing so I just installed it with ```sudo pacman -S shellcheck```.
+
+I also copied the files from the ```~./doom.d/``` folder to my dotfiles folder and symlinked them back to the original folder so I can use them here in GitHub (but I'm still looking for a better solution to managing my dotfiles).
+
+### Configuration
+
+In general, when using Doom Emacs, only the config files in ```~/.doom.d/``` should be used, not the normal Emacs config files.
+
+* config.el - configuration
+* init.el - specifies what is loaded when Doom Emacs starts
+* packages.el - packages/plugins that should be installed
+
+Continue with [this video tutorial](https://youtu.be/iab2z21cRqA?t=550).
 
 ---
 ---
