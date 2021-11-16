@@ -1,1 +1,0 @@
-/home/matko/.doom.d/init.el
