@@ -38,10 +38,15 @@ I also copied the files from the ```~./doom.d/``` folder to my dotfiles folder a
 In general, when using Doom Emacs, only the config files in ```~/.doom.d/``` should be used, not the normal Emacs config files.
 
 * config.el - configuration
-* init.el - specifies what is loaded when Doom Emacs starts
+* init.el - specifies what is loaded when Doom Emacs starts, which Doom modules are enabled
 * packages.el - packages/plugins that should be installed
 
+Generally we don't need to mess with the ```init.el``` file, except when it comes to **uncommenting** lines that are commented out in order to enable some modules.
+
+
 Continue with [this video tutorial](https://youtu.be/iab2z21cRqA?t=550).
+
+
 
 ---
 ---
