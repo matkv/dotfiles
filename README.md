@@ -41,7 +41,11 @@ In general, when using Doom Emacs, only the config files in ```~/.doom.d/``` sho
 * init.el - specifies what is loaded when Doom Emacs starts
 * packages.el - packages/plugins that should be installed
 
-Continue with [this video tutorial](https://youtu.be/iab2z21cRqA?t=550).
+### Running commands
+
+By pressing ```Shift``` and then ```Spacebar``` I can get to an overview of the available commands. If I want to run a command like for example ```doom/restart-and-restore``` in order to restart and load a new config, I can press ```Shift``` and ```Space``` again, then enter the command mode (like in vim/neovim) with ```Shift + :``` and then just run whatever command I want.
+
+It is also possible to try out themes this way by running the ```load-theme``` command or setting one with the ```set-theme``` command. (Or setting the theme in the config.el) file.
 
 ---
 ---
