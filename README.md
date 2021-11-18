@@ -45,9 +45,30 @@ Generally we don't need to mess with the ```init.el``` file, except when it come
 
 ### Running commands
 
-By pressing ```Shift``` and then ```Spacebar``` I can get to an overview of the available commands. If I want to run a command like for example ```doom/restart-and-restore``` in order to restart and load a new config, I can press ```Shift``` and ```Space``` again, then enter the command mode (like in vim/neovim) with ```Shift + :``` and then just run whatever command I want.
+By pressing ```Shift``` and then ```Spacebar``` I can get to an overview of the available commands. If I want to run a command like for example ```doom/restart-and-restore``` in order to restart and load a new config, here is what I need to do. 
+
+I can use the **meta key + x**, so I would press ```Alt``` and then ```x```, and then just start typing the command and Doom Emacs will start autocompleting it for me and I just run it by pressing enter.
 
 It is also possible to try out themes this way by running the ```load-theme``` command or setting one with the ```set-theme``` command. (Or setting the theme in the config.el) file.
+
+In order to load the new config and my changes, I need to run ```doom sync``` in the terminal. This will reload the config and install all the new packages/plugins.
+
+### Installing packages in packages.el
+
+In order to install a package (a plugin) that was not included originally in Doom Emacs, we use the ```packages.el``` file.
+
+To install a package:
+
+``` emacs-lisp
+(package! name-of-plugin)
+```
+
+### Tools
+#### Markdown-preview
+
+When editing a markdown file, I can preview how the file will look by running the command ```markdown-preview``` or even quicker by pressing ```SPC m p``` (Shift + spacebar, then m, then p) and a preview of the markdown file will open in the default browser.
+
+**TODO:** Try enabling LSP support for the languages that I use the most - this means that autocompletion and syntax errors and things like that should work just the way they do in VSCode for example. 
 
 ---
 ---
