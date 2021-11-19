@@ -68,7 +68,9 @@ To install a package:
 
 When editing a markdown file, I can preview how the file will look by running the command ```markdown-preview``` or even quicker by pressing ```SPC m p``` (Shift + spacebar, then m, then p) and a preview of the markdown file will open in the default browser.
 
-**TODO:** Try enabling LSP support for the languages that I use the most - this means that autocompletion and syntax errors and things like that should work just the way they do in VSCode for example. 
+**TODO**
+
+  * [ ] Try setting up Doom Emacs on Windows using WSL - installing it with chocolatey had some errors with ligatures that I wasn't able to resolve. Try installing it using this tutorial:  [https://ethanaa.com/blog/switching-to-doom-emacs/#install-doom-emacs](https://ethanaa.com/blog/switching-to-doom-emacs/#install-doom-emacs)
 
 ---
 ---
