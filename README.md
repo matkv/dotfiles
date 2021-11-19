@@ -45,7 +45,7 @@ Generally we don't need to mess with the ```init.el``` file, except when it come
 
 ### Running commands
 
-By pressing ```Shift``` and then ```Spacebar``` I can get to an overview of the available commands. If I want to run a command like for example ```doom/restart-and-restore``` in order to restart and load a new config, here is what I need to do. 
+By pressing ```Spacebar``` I can get to an overview of the available commands. Then I just press whatever button is mapped to the command or menu I need. I can also just run commands directly. If I want to run a command like for example ```doom/restart-and-restore``` in order to restart and load a new config, here is what I need to do: 
 
 I can use the **meta key + x**, so I would press ```Alt``` and then ```x```, and then just start typing the command and Doom Emacs will start autocompleting it for me and I just run it by pressing enter.
 
