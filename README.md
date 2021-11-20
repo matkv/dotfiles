@@ -80,6 +80,4 @@ For example, if I have a markdown file open, it will show me useful commands for
 
 **TODO**
 
-* [ ] Figure out why FiraCode doesn't seem to work correctly 
-
 * [ ] Try setting up Doom Emacs on Windows using WSL - installing it with chocolatey had some errors with ligatures that I wasn't able to resolve. Try installing it using this tutorial:  [https://ethanaa.com/blog/switching-to-doom-emacs/#install-doom-emacs](https://ethanaa.com/blog/switching-to-doom-emacs/#install-doom-emacs)
