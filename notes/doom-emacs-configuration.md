@@ -45,6 +45,10 @@ I'm not sure exactly how this works / what this is called, but by pressing ```Co
 
 For example, if I have a markdown file open, it will show me useful commands for markdown files such as adding a todo item.
 
+## vim-tutor package
+
+I just installed the ```vim-tutor``` package to practice & get more familiar with the vim keybindings. Installing the package was straightforward. Because the package is in the [MELPA](https://melpa.org/) package archive all I needed to do was add the line ```(package! evil-tutor)``` to my ```packages.el``` file and then run ```doom sync``` to install the package. 
+
 **TODO**
 
 * [ ] Try setting up Doom Emacs on Windows using WSL - installing it with chocolatey had some errors with ligatures that I wasn't able to resolve. Try installing it using this tutorial:  [https://ethanaa.com/blog/switching-to-doom-emacs/#install-doom-emacs](https://ethanaa.com/blog/switching-to-doom-emacs/#install-doom-emacs)
