@@ -53,5 +53,13 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 ;;
+
 ;; Start doom emacs maximized
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+;; Show treemacs and minimap when opening a new project
+(add-hook! 'projectile-after-switch-project-hook
+  (defun project-setup ()
+    "Project setup"
+    (treemacs-display-current-project-exclusively)
+    (minimap-mode)))
