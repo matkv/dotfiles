@@ -148,6 +148,7 @@ export PATH="$HOME/gems/bin:$PATH"
 export PATH=$PATH:/home/matko/.gem/ruby/2.7.0/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/.dotnet/tools
+export PATH=$PATH:/home/matko/go
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 export NVM_DIR="$HOME/.nvm"
