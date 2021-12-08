@@ -1,47 +1,44 @@
 {
     "window.zoomLevel": 0,
-    "editor.fontFamily": "'FiraCode Nerd Font', 'SourceCodePro','Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'SourceCodePro','Droid Sans Mono'",
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "python.jediEnabled": false,
     "diffEditor.ignoreTrimWhitespace": false,
     "php.validate.executablePath": "//opt//lampp//bin//php",
-    "phpfmt.php_bin": "//opt//lampp//bin//php",
-    "[php]": {
-        "editor.defaultFormatter": "kokororin.vscode-phpfmt"
-    },
     "[css]": {
         "editor.defaultFormatter": "HookyQR.beautify"
     },
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "[markdown]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
     "editor.fontSize": 13,
-    "workbench.startupEditor": "welcomePage",
     "git.confirmSync": false,
     "explorer.confirmDelete": false,
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
-    "python.languageServer": "Microsoft",
-    "dart.debugExternalLibraries": true,
+    "python.languageServer": "Default",
     "dart.debugSdkLibraries": false,
+    "dart.analyzerSshHost": null,
     "[dart]": {
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
-        "editor.rulers": [
-            
-        ],
+        "editor.rulers": [],
         "editor.selectionHighlight": false,
         "editor.suggest.snippetsPreventQuickSuggestions": false,
         "editor.suggestSelection": "first",
         "editor.tabCompletion": "onlySnippets",
         "editor.wordBasedSuggestions": false
     },
-    "dart.analyzerSshHost": null,
     "workbench.sideBar.location": "left",
-    "workbench.colorTheme": "Palenight Theme",
-
+    "workbench.colorTheme": "Gruvbox Dark Soft",
+    "grunt.autoDetect": "on",
+    "[html]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "editor.cursorBlinking": "smooth",
+    "editor.formatOnSave": true,
+    "workbench.tips.enabled": false,
+    "zenMode.fullScreen": false,
+    "debug.console.fontSize": 13,
+    "terminal.integrated.fontSize": 13,
+    "telemetry.telemetryLevel": "off",
 }
