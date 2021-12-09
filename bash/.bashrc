@@ -159,3 +159,4 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
 neofetch
+. "$HOME/.cargo/env"
