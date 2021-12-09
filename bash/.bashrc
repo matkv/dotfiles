@@ -160,3 +160,5 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 
 neofetch
 . "$HOME/.cargo/env"
+
+alias ll='ls -l'
