@@ -26,13 +26,13 @@ Color=120,50,40
 Color=192,57,43
 
 [Color2]
-Color=17,209,22
+Color=117,92,182
 
 [Color2Faint]
-Color=23,162,98
+Color=128,101,200
 
 [Color2Intense]
-Color=28,220,154
+Color=128,101,200
 
 [Color3]
 Color=246,116,0
@@ -92,5 +92,5 @@ Color=255,255,255
 Blur=true
 ColorRandomization=false
 Description=Breeze
-Opacity=0.7
+Opacity=0.73
 Wallpaper=
