@@ -9,3 +9,4 @@
 * Go
 * Gruvbox Theme
 * Python
+* rust-analyzer
