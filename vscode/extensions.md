@@ -10,3 +10,4 @@
 * Gruvbox Theme
 * Python
 * rust-analyzer
+* CodeLLDB
