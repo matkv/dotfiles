@@ -1,0 +1,1 @@
+/home/matko/dotfiles/doom-emacs/config.el
