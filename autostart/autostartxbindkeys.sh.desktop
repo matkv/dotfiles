@@ -1,7 +1,0 @@
-[Desktop Entry]
-Exec=/home/matko/.config/autostart/autostartxbindkeys.sh
-Icon=dialog-scripts
-Name=autostartxbindkeys.sh
-Path=
-Type=Application
-X-KDE-AutostartScript=true
