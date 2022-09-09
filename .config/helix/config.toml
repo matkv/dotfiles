@@ -2,6 +2,7 @@ theme = "gruvbox"
 
 [editor]
 line-number = "absolute"
+middle-click-paste = true  # doesn't seem to work with kitty (Ctrl+Shift+V works though)
 
 [editor.cursor-shape]
 insert = "bar"
