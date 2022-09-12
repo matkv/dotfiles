@@ -3,6 +3,8 @@ theme = "gruvbox"
 [editor]
 line-number = "absolute"
 middle-click-paste = true  # doesn't seem to work with kitty (Ctrl+Shift+V works though)
+cursorline = true
+color-modes = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -14,3 +16,6 @@ display-messages = true
 
 [editor.file-picker]
 hidden = false
+
+[editor.indent-guides]
+render = true
