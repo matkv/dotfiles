@@ -1,7 +1,7 @@
 # to-do: go through all options at https://docs.helix-editor.com/configuration.html 
 # and add them here and decide what settings to set
 
-theme = "gruvbox"
+theme = "catppuccin_frappe"
 
 [editor]
 line-number = "absolute"
