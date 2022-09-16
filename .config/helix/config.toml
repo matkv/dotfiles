@@ -5,7 +5,7 @@ theme = "catppuccin_frappe"
 
 [editor]
 line-number = "absolute"
-middle-click-paste = true  # doesn't seem to work with kitty (Ctrl+Shift+V works though)
+middle-click-paste = true  
 cursorline = true
 color-modes = true
 rulers = []                # decide if necessary
@@ -24,3 +24,10 @@ hidden = false
 [editor.indent-guides]
 render = true
 character = "╎"
+
+# enable cursor movement with arrow keys in insert mode
+[keys.insert]
+up = "move_line_up"
+down = "move_line_down"
+left = "move_char_left"
+right = "move_char_right"
