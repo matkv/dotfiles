@@ -9,6 +9,7 @@ middle-click-paste = true
 cursorline = true
 color-modes = true
 rulers = []                # decide if necessary
+bufferline = "always"
 
 [editor.cursor-shape]
 insert = "bar"
