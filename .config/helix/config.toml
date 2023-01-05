@@ -1,7 +1,7 @@
 # to-do: go through all options at https://docs.helix-editor.com/configuration.html 
 # and add them here and decide what settings to set
 
-theme = "catppuccin_frappe"
+theme = "nord"
 
 [editor]
 line-number = "absolute"
