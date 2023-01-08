@@ -10,6 +10,7 @@ cursorline = true
 color-modes = true
 rulers = []                # decide if necessary
 bufferline = "always"
+completion-trigger-len = 1
 
 [editor.cursor-shape]
 insert = "bar"
