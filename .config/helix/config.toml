@@ -11,6 +11,7 @@ color-modes = true
 rulers = []                # decide if necessary
 bufferline = "always"
 completion-trigger-len = 1
+auto-info = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -19,6 +20,7 @@ select = "underline"
 
 [editor.lsp]
 display-messages = true
+display-signature-help-docs = false
 
 [editor.file-picker]
 hidden = false
