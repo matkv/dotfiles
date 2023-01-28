@@ -1,7 +1,4 @@
-# to-do: go through all options at https://docs.helix-editor.com/configuration.html 
-# and add them here and decide what settings to set
-
-theme = "gruvbox_custom"
+theme = "gruvbox_material_dark_medium" # theme by https://github.com/CptPotato/helix-themes
 
 [editor]
 line-number = "absolute"
@@ -11,6 +8,7 @@ color-modes = true
 rulers = []                # decide if necessary
 bufferline = "always"
 completion-trigger-len = 1
+idle-timeout = 200
 auto-info = true
 
 [editor.cursor-shape]
@@ -27,7 +25,11 @@ hidden = false
 
 [editor.indent-guides]
 render = true
-character = "╎"
+character = "┊"
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+right = ["diagnostics", "file-type", "position-percentage", "position", "file-encoding"]
 
 # enable cursor movement with arrow keys in insert mode
 [keys.insert]

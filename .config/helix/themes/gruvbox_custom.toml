@@ -6,3 +6,8 @@ inherits = "gruvbox"
 "constant.character.escape" = { fg = "fg2" }
 "ui.menu.selected" = { fg = "bg2", bg = "blue1" }
 "ui.text.focus" = { fg = "fg1", modifier = ["bold"] }
+"ui.statusline.normal" = { fg = "bg2", bg = "fg1", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "fg1", bg = "blue0", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "fg1", bg = "orange0", modifiers = ["bold"] }
+"ui.statusline.inactive" = { fg = "fg4", bg = "bg1", modifiers = ["bold"] }
+"variable.other.member" = {fg = "fg0"}
