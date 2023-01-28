@@ -1,3 +1,5 @@
+# theme by https://github.com/CptPotato/helix-themes
+
 "type" = "yellow"
 "constant" = "purple"
 "constant.numeric" = "purple"
