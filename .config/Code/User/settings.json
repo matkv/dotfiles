@@ -7,7 +7,7 @@
   "git.confirmSync": false,
   "explorer.confirmDelete": false,
   "workbench.sideBar.location": "left",
-  "workbench.colorTheme": "Gruvbox Dark Soft",
+  "workbench.colorTheme": "Gruvbox Dark Medium",
   "editor.cursorBlinking": "smooth",
   "editor.formatOnSave": true,
   "workbench.tips.enabled": false,
@@ -22,8 +22,8 @@
   "security.workspace.trust.untrustedFiles": "open",
 
   "workbench.colorCustomizations": {
-    "[Gruvbox Dark Soft]": {
-      "editorInlayHint.background": "#ff000000",
+    "[Gruvbox Dark Medium]": {
+      "editorInlayHint.background": "#282828",
       "editorInlayHint.typeForeground": "#aaa5aaf0",
       "editorInlayHint.parameterForeground": "#fdb6fdf0"
     }
