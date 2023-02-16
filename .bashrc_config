@@ -1,0 +1,19 @@
+# add the following lines to the .bashrc file (probably at the end)
+# remove the comments after the first line
+
+# include the config if it exists
+# if [ -f $HOME/.bashrc_config ]; then
+#     . $HOME/.bashrc_config
+# fi
+
+
+. "$HOME/.cargo/env"
+
+export PATH=$PATH:/usr/bin/xclip
+export PATH=$PATH:/usr/bin/omnisharp
+
+
+alias ll="ls -l"
+#alias hx="helix" # apparently not necessary when using the AUR version, hx command just works
+alias dotfiles='/usr/bin/git --git-dir=/home/matko/.dotfiles/ --work-tree=/home/matko'
+alias df='df -h'
