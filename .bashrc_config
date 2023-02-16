@@ -6,14 +6,11 @@
 #     . $HOME/.bashrc_config
 # fi
 
-
 . "$HOME/.cargo/env"
 
 export PATH=$PATH:/usr/bin/xclip
 export PATH=$PATH:/usr/bin/omnisharp
 
-
 alias ll="ls -l"
-#alias hx="helix" # apparently not necessary when using the AUR version, hx command just works
 alias dotfiles='/usr/bin/git --git-dir=/home/matko/.dotfiles/ --work-tree=/home/matko'
 alias df='df -h'
