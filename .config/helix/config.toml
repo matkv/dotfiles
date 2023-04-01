@@ -1,4 +1,4 @@
-theme = "gruvbox_material_dark_medium" # theme by https://github.com/CptPotato/helix-themes
+theme = "everforest_dark"
 
 [editor]
 line-number = "absolute"
@@ -18,7 +18,8 @@ select = "underline"
 
 [editor.lsp]
 display-messages = true
-display-signature-help-docs = false
+display-signature-help-docs = true
+display-inlay-hints = true
 
 [editor.file-picker]
 hidden = false
