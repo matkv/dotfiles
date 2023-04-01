@@ -30,7 +30,7 @@ character = "┊"
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]
-right = ["diagnostics", "file-type", "position-percentage", "position", "file-encoding"]
+right = ["diagnostics", "version-control", "file-type", "position-percentage", "position", "file-encoding"]
 
 # enable cursor movement with arrow keys in insert mode
 [keys.insert]
