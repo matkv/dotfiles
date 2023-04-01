@@ -32,9 +32,16 @@ character = "┊"
 left = ["mode", "spinner", "file-name"]
 right = ["diagnostics", "version-control", "file-type", "position-percentage", "position", "file-encoding"]
 
+[editor.soft-wrap]
+enable = false
+
 # enable cursor movement with arrow keys in insert mode
 [keys.insert]
 up = "move_line_up"
 down = "move_line_down"
 left = "move_char_left"
 right = "move_char_right"
+
+# toggle soft-wrap when pressing alt + s
+[keys.normal]
+"A-s" = ":toggle soft-wrap.enable"
