@@ -11,6 +11,7 @@
 export PATH=$PATH:/usr/bin/xclip
 export PATH=$PATH:/usr/bin/omnisharp
 export PATH=$PATH:/usr/bin/exercism # remove if I'm not using exercism on a new system
+export PATH=$PATH:/usr/bin/rust-analyzer
 
 alias ll="ls -l"
 alias dotfiles='/usr/bin/git --git-dir=/home/matko/.dotfiles/ --work-tree=/home/matko'
