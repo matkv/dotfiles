@@ -4,8 +4,8 @@ local opts = {
 	expandtab = true,
 	wrap = false,
 	termguicolors = true,
-	number = true,
-	relativenumber = true,
+	number = true
+	
 }
 
 -- Set options from table
