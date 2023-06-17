@@ -2,7 +2,11 @@ return {
   -- add gruvbox
   {
     "sainnhe/gruvbox-material",
-    opts = { background = "light", gruvbox_material_foreground = "mix", gruvbox_material_background = "hard" },
+    config = function()
+      vim.g.gruvbox_material_better_performance = 1
+      vim.g.gruvbox_mateiral_foreground = "mix"
+      vim.g.gruvbox_material_background = "medium"
+    end,
   },
 
   -- Configure LazyVim to load gruvbox
