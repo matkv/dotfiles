@@ -1,6 +1,6 @@
 if vim.g.neovide then
   -- set font
-  vim.o.guifont = "FiraCode Nerd Font:h10" -- text below applies for VimScript
+  vim.o.guifont = "FiraCode Nerd Font:h10"
 
   -- disable cursor animation
   vim.g.neovide_cursor_animation_length = 0
