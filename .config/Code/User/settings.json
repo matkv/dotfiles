@@ -26,5 +26,6 @@
       "editorInlayHint.typeForeground": "#aaa5aaf0",
       "editorInlayHint.parameterForeground": "#fdb6fdf0"
     }
-  }
+  },
+  "lldb.suppressUpdateNotifications": true
 }
