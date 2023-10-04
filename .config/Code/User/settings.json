@@ -27,5 +27,7 @@
       "editorInlayHint.parameterForeground": "#fdb6fdf0"
     }
   },
-  "lldb.suppressUpdateNotifications": true
+  "lldb.suppressUpdateNotifications": true,
+  "vim.neovimPath": "/usr/bin/nvim",
+  "vim.enableNeovim": true
 }
