@@ -18,3 +18,5 @@ export GOPATH=$HOME/go
 alias ll="ls -l"
 alias dotfiles='/usr/bin/git --git-dir=/home/matko/.dotfiles/ --work-tree=/home/matko'
 alias df='df -h'
+alias nivm="nvim"
+alias nvmi="nvim"
