@@ -22,3 +22,15 @@ end
 map("n", "gh", "^", { desc = "Move to the beginning of the line" })
 map("n", "gl", "$", { desc = "Move to the end of the line" })
 map("n", "ge", "G", { desc = "Last line" })
+
+--Try making this work somehow
+--map("n", "<M-x>", "_x", { desc = "Delete character without copying" })
+--map("n", "<M-dd>", "_dd", { desc = "Delete line without copying" })
+
+vim.keymap.set("n", "gf", function()
+  if require("obsidian").util.cursor_on_markdown_link() then
+    return "<cmd>ObsidianFollowLink<CR>"
+  else
+    return "gf"
+  end
+end, { noremap = false, expr = true })
