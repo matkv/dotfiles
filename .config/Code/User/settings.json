@@ -29,5 +29,6 @@
   },
   "lldb.suppressUpdateNotifications": true,
   "vim.neovimPath": "/usr/bin/nvim",
-  "vim.enableNeovim": true
+  "vim.enableNeovim": true,
+  "vim.easymotion": true
 }
