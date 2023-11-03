@@ -30,5 +30,6 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim"
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
+  "keyboard.dispatch": "keyCode"
 }
