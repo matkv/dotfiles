@@ -19,7 +19,6 @@
   "rust-analyzer.inlayHints.parameterHints.enable": true,
   "rust-analyzer.inlayHints.closingBraceHints.enable": true,
   "security.workspace.trust.untrustedFiles": "open",
-
   "workbench.colorCustomizations": {
     "[Gruvbox Dark Medium]": {
       "editorInlayHint.background": "#282828",
@@ -28,7 +27,8 @@
     }
   },
   "lldb.suppressUpdateNotifications": true,
-  "vim.neovimPath": "/usr/bin/nvim",
-  "vim.enableNeovim": true,
-  "vim.easymotion": true
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim"
 }
