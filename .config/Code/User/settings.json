@@ -6,7 +6,7 @@
   "git.confirmSync": false,
   "explorer.confirmDelete": false,
   "workbench.sideBar.location": "left",
-  "workbench.colorTheme": "Gruvbox Dark Medium",
+  "workbench.colorTheme": "GitHub Dark",
   "editor.cursorBlinking": "smooth",
   "editor.formatOnSave": true,
   "workbench.tips.enabled": false,
