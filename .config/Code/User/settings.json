@@ -1,5 +1,6 @@
 {
-  "editor.fontFamily": "'SourceCodePro','Droid Sans Mono'",
+  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono'",
+  "editor.fontLigatures": true,
   "editor.suggestSelection": "first",
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.fontSize": 13,
