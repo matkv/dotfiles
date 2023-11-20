@@ -21,3 +21,5 @@ alias dotfiles='/usr/bin/git --git-dir=/home/matko/.dotfiles/ --work-tree=/home/
 alias df='df -h'
 alias nivm="nvim"
 alias nvmi="nvim"
+alias mvc="mullvad connect"
+alias mvd="mullvad disconnect"
