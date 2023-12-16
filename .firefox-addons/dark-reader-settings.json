@@ -1,4 +1,5 @@
 {
+    "schemeVersion": 2,
     "enabled": true,
     "fetchNews": true,
     "theme": {
@@ -8,7 +9,7 @@
         "grayscale": 0,
         "sepia": 60,
         "useFont": false,
-        "fontFamily": "Open Sans",
+        "fontFamily": "Segoe UI",
         "textStroke": 0,
         "engine": "dynamicTheme",
         "stylesheet": "",
@@ -80,7 +81,8 @@
             }
         }
     ],
-    "siteList": [
+    "enabledByDefault": false,
+    "enabledFor": [
         "www.goodreads.com",
         "news.ycombinator.com",
         "medium.com",
@@ -89,10 +91,10 @@
         "kinsta.com",
         "prismic.io",
         "gobyexample.com",
-        "en.wikipedia.org"
+        "en.wikipedia.org",
+        "de.wikipedia.org"
     ],
-    "siteListEnabled": [],
-    "applyToListedOnly": true,
+    "disabledFor": [],
     "changeBrowserTheme": false,
     "syncSettings": true,
     "syncSitesFixes": true,
@@ -116,6 +118,12 @@
     "enableContextMenus": false,
     "detectDarkTheme": true,
     "automationBehaviour": "OnOff",
+    "displayedNews": [
+        "detect-dark-theme",
+        "mobile",
+        "v5-survey",
+        "thanks-2023"
+    ],
     "readNews": [
         "detect-dark-theme",
         "no-war",
@@ -137,11 +145,7 @@
         "custom-site-settings",
         "thanks-for-contribution",
         "dynamic-theme",
-        "mobile"
-    ],
-    "displayedNews": [
-        "detect-dark-theme",
         "mobile",
-        "v5-survey"
+        "thanks-2023"
     ]
 }
