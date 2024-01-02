@@ -95,7 +95,9 @@
         "de.wikipedia.org",
         "www.jeremyong.com",
         "blog.mozilla.org",
-        "www.gamestar.de"
+        "www.gamestar.de",
+        "www.dnsleaktest.com",
+        "jvns.ca"
     ],
     "disabledFor": [],
     "changeBrowserTheme": false,
