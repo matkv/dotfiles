@@ -97,7 +97,8 @@
         "blog.mozilla.org",
         "www.gamestar.de",
         "www.dnsleaktest.com",
-        "jvns.ca"
+        "jvns.ca",
+        "exercism.org"
     ],
     "disabledFor": [],
     "changeBrowserTheme": false,
