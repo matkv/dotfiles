@@ -7,7 +7,6 @@
   "git.confirmSync": false,
   "explorer.confirmDelete": false,
   "workbench.sideBar.location": "left",
-  "workbench.colorTheme": "GitHub Dark",
   "editor.cursorBlinking": "smooth",
   "editor.formatOnSave": true,
   "workbench.tips.enabled": false,
@@ -32,5 +31,7 @@
     "asvetliakov.vscode-neovim": 1
   },
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-  "keyboard.dispatch": "keyCode"
+  "keyboard.dispatch": "keyCode",
+  "editor.stickyScroll.enabled": true,
+  "workbench.colorTheme": "GitHub Dark"
 }
