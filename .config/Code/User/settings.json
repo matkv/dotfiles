@@ -33,5 +33,6 @@
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "keyboard.dispatch": "keyCode",
   "editor.stickyScroll.enabled": true,
-  "workbench.colorTheme": "GitHub Dark"
+  "workbench.colorTheme": "GitHub Dark",
+  "excalidraw.theme": "dark"
 }
