@@ -101,7 +101,9 @@
         "exercism.org",
         "www.bbc.com",
         "kyivindependent.com",
-        "tabs.ultimate-guitar.com"
+        "tabs.ultimate-guitar.com",
+        "www.apple.com",
+        "chethaase.medium.com"
     ],
     "disabledFor": [],
     "changeBrowserTheme": false,
@@ -126,13 +128,13 @@
     "enableForProtectedPages": false,
     "enableContextMenus": false,
     "detectDarkTheme": true,
-    "automationBehaviour": "OnOff",
     "displayedNews": [
         "detect-dark-theme",
         "mobile",
         "v5-survey",
         "thanks-2023"
     ],
+    "automationBehaviour": "OnOff",
     "readNews": [
         "detect-dark-theme",
         "no-war",
