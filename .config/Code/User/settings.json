@@ -33,7 +33,6 @@
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "keyboard.dispatch": "keyCode",
   "editor.stickyScroll.enabled": true,
-  "workbench.colorTheme": "Mayukai Dark",
   "excalidraw.theme": "dark",
   "security.allowedUNCHosts": [
     "wsl.localhost"
@@ -42,5 +41,7 @@
   "launch": {
     "configurations": [],
     "compounds": []
-  }
+  },
+  "workbench.colorTheme": "GitHub Dark Default",
+  "go.toolsManagement.autoUpdate": true,
 }
