@@ -105,7 +105,9 @@
         "www.apple.com",
         "chethaase.medium.com",
         "neal.fun",
-        "gohugo.io"
+        "gohugo.io",
+        "dev.to",
+        "go.dev"
     ],
     "disabledFor": [],
     "changeBrowserTheme": false,
