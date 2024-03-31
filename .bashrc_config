@@ -6,18 +6,16 @@
 #     . $HOME/.bashrc_config
 # fi
 
-. "$HOME/.cargo/env"
-
 export PATH=$PATH:/usr/bin/xclip
 export PATH=$PATH:/usr/bin/omnisharp
 export PATH=$PATH:/usr/bin/exercism # remove if I'm not using exercism on a new system
 export PATH=$PATH:/usr/bin/rust-analyzer
 export PATH=$PATH:/usr/bin/go 
 export GOPATH=$HOME/go
-export PATH=$PATH:/home/matko/go/bin/
+export PATH=$PATH:/home/matkv/go/bin/
 
 alias ll="ls -l"
-alias dotfiles='/usr/bin/git --git-dir=/home/matko/.dotfiles/ --work-tree=/home/matko'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/home/matkv'
 alias df='df -h'
 alias nivm="nvim"
 alias nvmi="nvim"
