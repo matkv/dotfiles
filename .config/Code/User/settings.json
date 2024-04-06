@@ -44,4 +44,11 @@
   },
   "workbench.colorTheme": "GitHub Dark Default",
   "go.toolsManagement.autoUpdate": true,
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "csharp": true
+  },
 }
