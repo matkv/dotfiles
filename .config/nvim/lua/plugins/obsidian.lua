@@ -16,7 +16,5 @@ return {
         path = "/mnt/c/Users/matko/Documents/Obsidian Vault",
       },
     },
-
-    -- see below for full list of options 👇
   },
 }
