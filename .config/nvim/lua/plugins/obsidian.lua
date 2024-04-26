@@ -16,7 +16,7 @@ return {
 
     wk.register {
       ["<leader>o"] = {
-        name = "Obsidian",
+        name = "obsidian",
         o = { "<cmd>ObsidianOpen<cr>", "Open note" },
         d = { "<cmd>ObsidianDailies -10 0<cr>", "Daily notes" },
         p = { "<cmd>ObsidianPasteImg<cr>", "Paste image" },
@@ -63,7 +63,7 @@ return {
 
     wk.register({
       ["<leader>o"] = {
-        name = "Obsidian",
+        name = "obsidian",
         e = {
           function()
             local title = vim.fn.input { prompt = "Enter title (optional): " }
