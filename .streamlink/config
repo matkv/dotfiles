@@ -26,7 +26,7 @@
 #player=C:\Program Files (x86)\MPC-HC\mpc-hc.exe
 
 # MPV
-#player=C:\Program Files\mpv-x86_64\mpv.exe
+player=C:\Users\matko\scoop\apps\mpv\current\mpv.exe
 
 # Custom player arguments can be set using the player-args option.
 # Please see the documentation of the used player for its available arguments.
