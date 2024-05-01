@@ -37,4 +37,7 @@ config.colors = {
 	},
 }
 
+config.initial_rows = 30
+config.initial_cols = 110
+
 return config
