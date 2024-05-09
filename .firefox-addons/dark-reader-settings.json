@@ -113,7 +113,8 @@
         "marketplace.visualstudio.com",
         "www.namethatnation.com",
         "en.m.wikipedia.org",
-        "de.m.wikipedia.org"
+        "de.m.wikipedia.org",
+        "ntietz.com"
     ],
     "disabledFor": [],
     "changeBrowserTheme": false,
@@ -138,13 +139,13 @@
     "enableForProtectedPages": false,
     "enableContextMenus": false,
     "detectDarkTheme": true,
-    "automationBehaviour": "OnOff",
     "displayedNews": [
         "detect-dark-theme",
         "mobile",
         "v5-survey",
         "thanks-2023"
     ],
+    "automationBehaviour": "OnOff",
     "readNews": [
         "detect-dark-theme",
         "no-war",
