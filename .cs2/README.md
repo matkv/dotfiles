@@ -1,3 +1,4 @@
-Location: C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg
+# CS2 Config
 
-Add start options for CS2 -> +exec config.cfg
+- Location of config file: ```C:\Program Files (x86)\Steam\steamapps\common\Counter-Strike Global Offensive\game\csgo\cfg```
+- Add start options for CS2 in Steam: ```+exec config.cfg```
