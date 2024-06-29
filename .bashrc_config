@@ -24,5 +24,6 @@ alias mvc="mullvad connect"
 alias mvd="mullvad disconnect"
 alias obsidian="nvim /mnt/c/Users/matko/Documents/Obsidian\ Vault/notepad.md"
 alias update="sudo pacman -Syu"
+alias ff="fastfetch"
 
 fastfetch
