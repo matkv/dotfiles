@@ -52,4 +52,7 @@
     "csharp": true
   },
   "json.schemas": [],
+  "github.copilot.editor.enableAutoCompletions": true,
+  "vscode-neovim.useWSL": true,
+  "vscode-neovim.compositeKeys": {},
 }
