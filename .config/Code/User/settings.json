@@ -42,7 +42,7 @@
     "configurations": [],
     "compounds": []
   },
-  "workbench.colorTheme": "GitHub Dark Default",
+  "workbench.colorTheme": "GitHub Dark",
   "go.toolsManagement.autoUpdate": true,
   "github.copilot.enable": {
     "*": true,
@@ -55,4 +55,5 @@
   "github.copilot.editor.enableAutoCompletions": true,
   "vscode-neovim.useWSL": true,
   "vscode-neovim.compositeKeys": {},
+  "remote.autoForwardPortsSource": "hybrid",
 }
