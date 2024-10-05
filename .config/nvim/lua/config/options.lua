@@ -4,4 +4,4 @@
 
 local opt = vim.opt
 opt.relativenumber = false -- relative line numbers
-opt.spell = true           -- disable spell check by default
+opt.spell = false -- disable spell check by default
