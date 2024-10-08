@@ -95,5 +95,8 @@ return {
         path = "/mnt/c/Users/matko/Documents/Obsidian Vault",
       },
     },
+    templates = {
+      folder = "/mnt/c/Users/matko/Documents/Obsidian Vault/templates",
+    },
   },
 }
