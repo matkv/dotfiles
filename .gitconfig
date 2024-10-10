@@ -7,3 +7,5 @@
 [user]
 	name = matkv
 	email = mail@matkv.dev
+[rebase]
+	autoStash = true
