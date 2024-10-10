@@ -42,7 +42,7 @@
     "configurations": [],
     "compounds": []
   },
-  "workbench.colorTheme": "GitHub Dark",
+  "workbench.colorTheme": "GitHub Dark Default",
   "go.toolsManagement.autoUpdate": true,
   "github.copilot.enable": {
     "*": true,
