@@ -135,16 +135,11 @@
         "longitude": null
     },
     "previewNewDesign": true,
+    "previewNewestDesign": false,
     "enableForPDF": true,
     "enableForProtectedPages": false,
     "enableContextMenus": false,
     "detectDarkTheme": true,
-    "displayedNews": [
-        "detect-dark-theme",
-        "mobile",
-        "v5-survey",
-        "thanks-2023"
-    ],
     "automationBehaviour": "OnOff",
     "readNews": [
         "detect-dark-theme",
@@ -168,6 +163,19 @@
         "thanks-for-contribution",
         "dynamic-theme",
         "mobile",
-        "thanks-2023"
-    ]
+        "thanks-2023",
+        "g-search-crash"
+    ],
+    "displayedNews": [
+        "detect-dark-theme",
+        "mobile",
+        "v5-survey",
+        "thanks-2023",
+        "g-search-crash"
+    ],
+    "installation": {
+        "date": 1726767918287,
+        "reason": "update",
+        "version": "4.9.89"
+    }
 }
