@@ -1,0 +1,97 @@
+{
+  "general_settings": {
+    "showMoreActionsButton": false,
+    "betaFeatures": false,
+    "legacyMode": false,
+    "silentOpen": false
+  },
+  "template_1728168375472j58t6lh7v": [
+    "ᯡࡅ䁬⁼ၦǸʀήǐ傆Ȫ怫ᤠ囘倥溠ᬠᘨΑ-Р瘢థ堪ㆤĊ⸠䘠С䊴怠ᵅ㠢㬨Ų焉ᥭ䲯㍡⻴洉䀧嫭瀬㖵滓㖡䚠㥮⸠扦᷶符͆ٲ䮠⾿䦤ॎ囅瀣岤Ôጩ㒼䡅䎅攰ᣐ㗳仒坒㯐ӭᆶ‪з勘>峸ႄ噠捋ጒ瀣ᲀú偨⽂ᔣට䑂⋩ैؠ垅ᤣᦽ䷫挑祹棹ᒳ㳥澩㦬䀩熰⹶猝౽⡸⽺ጧl䐰͸婬~䦇䆢ᅁ毡ᆇ崤嚋༶ē䛒┻ㄡ瘧Ⱓ⋈䁇᧧噡⸣ⷩ́とᄬһ湌៾㖠₶U㝸䇠ृ⒧⇠䠺䨂ሀ㧾ŧ穗ქ䀢㧦๞烐䅁Ὠ䅺㌴䘃ⓩ⁾⹊㶄⦁䋥吖穼Ვᱹ摿ⶔධ槕Ǧ儀嶥⯕ਸ਼㘠ຆ歑ª␫३ቐ֧㔤瓾ήᩱୃ䄰̈癪䷆殱嫰㭨ᰑ  "
+  ],
+  "template_list": [
+    "1728168375472j58t6lh7v"
+  ],
+  "highlighter_settings": {
+    "highlighterEnabled": true,
+    "alwaysShowHighlights": true,
+    "highlightBehavior": "replace-content"
+  },
+  "vaults": [],
+  "interpreter_settings": {
+    "openaiApiKey": "",
+    "anthropicApiKey": "",
+    "interpreterModel": "gpt-4o-mini",
+    "models": [
+      {
+        "id": "gpt-4o-mini",
+        "name": "GPT-4o Mini",
+        "provider": "OpenAI",
+        "baseUrl": "https://api.openai.com/v1/chat/completions",
+        "enabled": true
+      },
+      {
+        "id": "gpt-4o",
+        "name": "GPT-4o",
+        "provider": "OpenAI",
+        "baseUrl": "https://api.openai.com/v1/chat/completions",
+        "enabled": true
+      },
+      {
+        "id": "gpt-o1-mini",
+        "name": "GPT-o1 Mini",
+        "provider": "OpenAI",
+        "baseUrl": "https://api.openai.com/v1/chat/completions",
+        "enabled": true
+      },
+      {
+        "id": "claude-3-5-sonnet-20240620",
+        "name": "Claude 3.5 Sonnet",
+        "provider": "Anthropic",
+        "baseUrl": "https://api.anthropic.com/v1/messages",
+        "enabled": true
+      },
+      {
+        "id": "claude-3-haiku-20240307",
+        "name": "Claude 3 Haiku",
+        "provider": "Anthropic",
+        "baseUrl": "https://api.anthropic.com/v1/messages",
+        "enabled": true
+      },
+      {
+        "id": "claude-3-opus-20240229",
+        "name": "Claude 3 Opus",
+        "provider": "Anthropic",
+        "baseUrl": "https://api.anthropic.com/v1/messages",
+        "enabled": true
+      }
+    ],
+    "interpreterEnabled": false,
+    "interpreterAutoRun": false,
+    "defaultPromptContext": "{{fullHtml|strip_tags:(\"script,h1,h2,h3,h4,h5,h6,meta,a,ol,ul,li,p,em,strong,i,b,img,video,audio,math,tablecite,strong,td,th,tr,caption,u\")|strip_attr:(\"alt,src,href,id,content,property,name,datetime,title\")}}"
+  },
+  "property_types": [
+    {
+      "name": "title",
+      "type": "text",
+      "defaultValue": "{{title}}"
+    },
+    {
+      "name": "description",
+      "type": "text",
+      "defaultValue": "{{description}}"
+    },
+    {
+      "name": "tags",
+      "type": "multitext",
+      "defaultValue": "clippings"
+    },
+    {
+      "name": "link",
+      "type": "text"
+    },
+    {
+      "name": "date",
+      "type": "text"
+    }
+  ]
+}
