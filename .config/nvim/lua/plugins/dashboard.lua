@@ -7,14 +7,15 @@ return {
   {
     "nvimdev/dashboard-nvim",
     opts = function(_, opts)
-      -- Insert the Obsidian entry as the second-to-last entry
-      table.insert(opts.config.center, #opts.config.center - 1, {
-        icon = "  ",
-        desc = "Open Obsidian vault",
-        key = "o",
-        shortcut = "o", -- Use shortcut for display
-        action = open_obsidan,
-      })
+      if vim.g.current_hostname == "omen" then
+        table.insert(opts.config.center, #opts.config.center - 1, {
+          icon = "  ",
+          desc = "Open Obsidian vault",
+          key = "o",
+          shortcut = "o", -- Use shortcut for display
+          action = open_obsidan,
+        })
+      end
     end,
   },
 }
