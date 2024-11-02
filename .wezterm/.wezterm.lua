@@ -13,7 +13,8 @@ config.tab_bar_at_bottom = true
 config.window_decorations = "RESIZE"
 
 config.window_frame = {
-	active_titlebar_bg = "#363636",
+	active_titlebar_bg = "rgba(0 0 0 0)",
+	inactive_titlebar_bg = "rgba(0 0 0 0)",
 }
 
 config.colors = {
