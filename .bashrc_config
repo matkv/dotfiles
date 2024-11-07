@@ -12,7 +12,7 @@ export PATH=$PATH:/usr/bin/exercism # remove if I'm not using exercism on a new 
 export PATH=$PATH:/usr/bin/rust-analyzer
 export PATH=$PATH:/usr/bin/go 
 export GOPATH=$HOME/go
-export PATH=$PATH:/home/matkv/go/bin/
+export PATH=$PATH:~/go/bin/
 
 alias ll="ls -l"
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/home/matkv'
