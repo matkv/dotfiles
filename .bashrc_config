@@ -26,5 +26,6 @@ alias co="cd /mnt/c/Users/matko/Documents/Obsidian\ Vault/"
 alias obsidian="nvim /mnt/c/Users/matko/Documents/Obsidian\ Vault/notepad.md"
 alias update="sudo pacman -Syu"
 alias ff="fastfetch"
+alias updateutils="go install github.com/matkv/utils@latest"
 
 fastfetch
