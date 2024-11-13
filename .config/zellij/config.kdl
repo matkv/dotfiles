@@ -5,7 +5,7 @@ keybinds {
         // bind "Alt c" { Copy; }
 
         bind "Ctrl k" {  
-          LaunchOrFocusPlugin "file:./zj-alias.wasm" {
+          LaunchOrFocusPlugin "file:~/.config/zellij/zj-alias.wasm" {
             floating true
           }
         }
