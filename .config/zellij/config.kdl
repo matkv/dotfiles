@@ -3,6 +3,12 @@ keybinds {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
+
+        bind "Ctrl k" {  
+          LaunchOrFocusPlugin "file:./zj-alias.wasm" {
+            floating true
+          }
+        }
     }
     locked {
         bind "Ctrl g" { SwitchToMode "Normal"; }
