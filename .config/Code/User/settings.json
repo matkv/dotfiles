@@ -34,29 +34,27 @@
   "keyboard.dispatch": "keyCode",
   "editor.stickyScroll.enabled": true,
   "excalidraw.theme": "dark",
-  "security.allowedUNCHosts": [
-    "wsl.localhost"
-  ],
+  "security.allowedUNCHosts": ["wsl.localhost"],
   "explorer.confirmDragAndDrop": false,
   "launch": {
     "configurations": [],
     "compounds": []
   },
-  "workbench.colorTheme": "GitHub Dark Default",
   "go.toolsManagement.autoUpdate": true,
   "github.copilot.enable": {
     "*": true,
     "plaintext": false,
-    "markdown": false,
+    "markdown": true,
     "scminput": false,
     "csharp": true
   },
-  "json.schemas": [
-  
-  ],
+  "json.schemas": [],
   "github.copilot.editor.enableAutoCompletions": true,
   "vscode-neovim.useWSL": true,
   "vscode-neovim.compositeKeys": {},
   "remote.autoForwardPortsSource": "hybrid",
   "json.format.enable": false,
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "chat.editing.confirmEditRequestRetry": false,
+  "workbench.colorTheme": "Moegi Black Zen"
 }
