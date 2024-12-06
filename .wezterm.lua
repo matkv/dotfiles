@@ -15,6 +15,7 @@ config.window_decorations = "RESIZE"
 config.window_frame = {
 	active_titlebar_bg = "rgba(0 0 0 0)",
 	inactive_titlebar_bg = "rgba(0 0 0 0)",
+	font_size = 11.0,
 }
 
 config.colors = {
