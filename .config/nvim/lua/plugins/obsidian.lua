@@ -1,4 +1,4 @@
-if vim.g.current_hostname == "omen" then
+if vim.g.current_hostname == "omen" or vim.g.current_hostname == "acer" then
   return {
     "epwalsh/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
@@ -91,13 +91,17 @@ if vim.g.current_hostname == "omen" then
     end,
     opts = {
       workspaces = {
+        -- {
+        --   name = "omen",
+        --   path = "/mnt/c/Users/matko/Documents/Obsidian Vault",
+        -- },
         {
-          name = "personal",
-          path = "/mnt/c/Users/matko/Documents/Obsidian Vault",
+          name = "manjaro",
+          path = "/home/matko/documents/Obsidian Vault",
         },
       },
       templates = {
-        folder = "/mnt/c/Users/matko/Documents/Obsidian Vault/templates",
+        folder = "templates",
       },
     },
   }
