@@ -15,5 +15,6 @@ return {
     terminal = { enabled = true },
     toggle = { enabled = true },
     words = { enabled = true },
+    indent = { animate = { enabled = false } },
   },
 }
