@@ -56,5 +56,5 @@
   "json.format.enable": false,
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "chat.editing.confirmEditRequestRetry": false,
-  "workbench.colorTheme": "Moegi Black Zen"
+  "workbench.colorTheme": "GitHub Dark"
 }
