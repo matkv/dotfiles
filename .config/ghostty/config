@@ -1,1 +1,3 @@
 theme = GruvboxDark
+window-decoration = true
+gtk-titlebar = false
