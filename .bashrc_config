@@ -15,7 +15,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:~/go/bin/
 
 alias ll="ls -l"
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/home/matko'
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/home/matkv'
 alias trackedfiles="dotfiles ls-tree --full-tree -r HEAD"
 alias df='df -h'
 alias nivm="nvim"
