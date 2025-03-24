@@ -28,5 +28,6 @@ alias update="sudo pacman -Syu"
 alias ff="fastfetch"
 alias updateutils="go install github.com/matkv/utils@latest"
 alias z="zellij"
+alias ds="dotfiles status"
 
 fastfetch
