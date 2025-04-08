@@ -114,7 +114,8 @@
         "www.namethatnation.com",
         "en.m.wikipedia.org",
         "de.m.wikipedia.org",
-        "ntietz.com"
+        "ntietz.com",
+        "tedium.co"
     ],
     "disabledFor": [],
     "changeBrowserTheme": false,
@@ -140,7 +141,6 @@
     "enableForProtectedPages": false,
     "enableContextMenus": false,
     "detectDarkTheme": true,
-    "automationBehaviour": "OnOff",
     "readNews": [
         "detect-dark-theme",
         "no-war",
@@ -166,16 +166,18 @@
         "thanks-2023",
         "g-search-crash"
     ],
+    "automationBehaviour": "OnOff",
+    "installation": {
+        "date": 1726767918287,
+        "reason": "update",
+        "version": "4.9.89"
+    },
     "displayedNews": [
         "detect-dark-theme",
         "mobile",
         "v5-survey",
         "thanks-2023",
-        "g-search-crash"
-    ],
-    "installation": {
-        "date": 1726767918287,
-        "reason": "update",
-        "version": "4.9.89"
-    }
+        "g-search-crash",
+        "firefox-bugs"
+    ]
 }
