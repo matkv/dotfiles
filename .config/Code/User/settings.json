@@ -48,13 +48,24 @@
     "scminput": false,
     "csharp": true
   },
-  "json.schemas": [],
-  "github.copilot.editor.enableAutoCompletions": true,
+  "json.schemas": [
+
+  ],
   "vscode-neovim.useWSL": true,
   "vscode-neovim.compositeKeys": {},
   "remote.autoForwardPortsSource": "hybrid",
   "json.format.enable": false,
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "chat.editing.confirmEditRequestRetry": false,
-  "workbench.colorTheme": "GitHub Dark"
+  "terminal.external.windowsExec": "C:\\\\Program Files\\\\WezTerm\\\\wezterm-gui.exe",
+  "terminal.external.linuxExec": "/mnt/c/Program Files/WezTerm/wezterm-gui.exe",
+  "svelte.enable-ts-plugin": true,
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "editor.semanticHighlighting.enabled": true,
+  "terminal.integrated.minimumContrastRatio": 1,
+  "window.titleBarStyle": "custom",
+  "gopls": {
+    "ui.semanticTokens": true
+  },
+  "workbench.colorTheme": "GitHub Dark Default"
 }
