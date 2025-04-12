@@ -95,10 +95,10 @@ if vim.g.current_hostname == "omen" or vim.g.current_hostname == "acer" then
           name = "omen",
           path = "/mnt/c/Users/matko/Documents/Obsidian Vault",
         },
-        {
-          name = "manjaro",
-          path = "/home/matko/documents/Obsidian Vault",
-        },
+        -- {
+        --   name = "manjaro",
+        --   path = "/home/matko/documents/Obsidian Vault",
+        -- },
       },
       templates = {
         folder = "templates",
