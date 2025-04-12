@@ -15,9 +15,9 @@ export GOPATH=$HOME/go
 export PATH=$PATH:~/go/bin/
 
 alias ll="ls -l"
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/home/matkv'
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/home/matkv"
 alias trackedfiles="dotfiles ls-tree --full-tree -r HEAD"
-alias df='df -h'
+alias df="df -h"
 alias nivm="nvim"
 alias nvmi="nvim"
 alias mvc="mullvad connect"
@@ -32,5 +32,50 @@ alias ds="dotfiles status"
 alias start-tailscale="sudo tailscaled"
 alias tailscalehugo="hugo serve --bind=0.0.0.0 --port=1313"
 alias tailscalestartproject="npm run dev -- --host 0.0.0.0 --port 3000"
+
+# ChatGPT magic to print my bash aliases
+
+commands() {
+    echo
+
+    tmp_output=$(mktemp)
+
+    aliases=()
+    max_alias_length=0
+    max_command_length=0
+    while IFS= read -r line; do
+        name=$(echo "$line" | cut -d'=' -f1 | sed "s/^alias //")
+        command=$(echo "$line" | cut -d'=' -f2- | sed "s/^'//;s/'$//")
+        aliases+=("$name:$command")
+        
+        if [ ${#name} -gt $max_alias_length ]; then
+            max_alias_length=${#name}
+        fi
+        if [ ${#command} -gt $max_command_length ]; then
+            max_command_length=${#command}
+        fi
+    done < <(grep -E "^alias " ~/.bashrc_config | sort)
+
+    printf "%-${max_alias_length}s %-${max_command_length}s\n" "Alias" "Command" > "$tmp_output"
+
+    for entry in "${aliases[@]}"; do
+        name=$(echo "$entry" | cut -d':' -f1)
+        command=$(echo "$entry" | cut -d':' -f2)
+        printf "%-${max_alias_length}s %-${max_command_length}s\n" "$name" "$command" >> "$tmp_output"
+    done
+
+    while IFS= read -r line; do
+        if [[ "$line" == "Alias"* ]]; then
+            echo -e "$(tput bold)$line$(tput sgr0)"
+        else
+            alias=$(echo "$line" | cut -d' ' -f1)
+            cmd=$(echo "$line" | cut -d' ' -f2-)
+            echo -e "$(tput setaf 3)$alias$(tput sgr0) $(tput setaf 2)$cmd$(tput sgr0)"
+        fi
+    done < "$tmp_output"
+
+    rm "$tmp_output"
+    echo
+}
 
 fastfetch
