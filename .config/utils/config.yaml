@@ -1,9 +1,9 @@
-configType: "archlinux" # "windows" or "archlinux"
+configType: "linux" # "windows" or "linux"
 
 windows:
   dotfiles:
     path: "Documents/Code/dotfiles"
 
-archlinux:
+linux:
   dotfiles:
     path: ".dotfiles"
