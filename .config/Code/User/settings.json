@@ -67,7 +67,7 @@
   "gopls": {
     "ui.semanticTokens": true
   },
-  "workbench.colorTheme": "Gruvbox Material Dark",
+  "workbench.colorTheme": "Rosé Pine (no italics)",
   "gruvboxMaterial.darkContrast": "hard",
   "gruvboxMaterial.darkWorkbench": "flat",
   "gruvboxMaterial.italicComments": false,
