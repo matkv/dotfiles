@@ -13,6 +13,7 @@ export PATH=$PATH:/usr/bin/rust-analyzer
 export PATH=$PATH:/usr/bin/go 
 export GOPATH=$HOME/go
 export PATH=$PATH:~/go/bin/
+export PATH=$PATH:/usr/bin/zig
 
 alias ll="ls -l"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/home/matkv"
@@ -32,6 +33,7 @@ alias ds="dotfiles status"
 alias start-tailscale="sudo tailscaled"
 alias tailscalehugo="hugo serve --bind=0.0.0.0 --port=1313"
 alias tailscalestartproject="npm run dev -- --host 0.0.0.0 --port 3000"
+alias updatezig="yay -S zig-nightly-bin"
 
 # ChatGPT magic to print my bash aliases
 
