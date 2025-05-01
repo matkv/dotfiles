@@ -16,7 +16,7 @@ export PATH=$PATH:~/go/bin/
 export PATH=$PATH:/usr/bin/zig
 
 alias ll="ls -l"
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=/home/matkv"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias trackedfiles="dotfiles ls-tree --full-tree -r HEAD"
 alias df="df -h"
 alias nivm="nvim"
