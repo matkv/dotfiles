@@ -1,0 +1,58 @@
+# ~/.config/starship.toml
+
+# General prompt settings
+add_newline = true
+
+# Prompt order
+format = "$os $username$hostname$directory$git_branch$character"
+
+# Use a simple but styled prompt symbol
+[character]
+symbol = "⮞"
+success_symbol = "[⮞](bold green)"
+error_symbol = "[⮞](bold red)"
+format = "$symbol "
+
+# Username and hostname
+[username]
+style_user = "bold yellow"
+style_root = "bold red"
+format = "[$user]($style)"
+show_always = true
+
+[hostname]
+ssh_only = false
+style = "bold yellow"
+format = "[@](bold green)[$hostname]($style) "
+
+# Directory path
+[directory]
+style = "bold green"
+format = "[$path]($style) "
+
+[os]
+disabled = false
+style = "bold green"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+EndeavourOS = ""
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+Pop = ""
