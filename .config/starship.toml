@@ -8,7 +8,6 @@ format = "$os $username$hostname$directory$git_branch$character"
 
 # Use a simple but styled prompt symbol
 [character]
-symbol = "⮞"
 success_symbol = "[⮞](bold green)"
 error_symbol = "[⮞](bold red)"
 format = "$symbol "
