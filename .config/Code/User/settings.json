@@ -34,9 +34,7 @@
   "keyboard.dispatch": "keyCode",
   "editor.stickyScroll.enabled": true,
   "excalidraw.theme": "dark",
-  "security.allowedUNCHosts": [
-    "wsl.localhost"
-  ],
+  "security.allowedUNCHosts": ["wsl.localhost"],
   "explorer.confirmDragAndDrop": false,
   "launch": {
     "configurations": [],
@@ -48,9 +46,13 @@
     "plaintext": false,
     "markdown": true,
     "scminput": false,
-    "csharp": true
+    "csharp": true,
+    "go": true
   },
-  "json.schemas": [],
+  "json.schemas": [
+  
+  
+  ],
   "vscode-neovim.useWSL": true,
   "vscode-neovim.compositeKeys": {},
   "remote.autoForwardPortsSource": "hybrid",
@@ -60,7 +62,6 @@
   "terminal.external.windowsExec": "C:\\\\Program Files\\\\WezTerm\\\\wezterm-gui.exe",
   "terminal.external.linuxExec": "/mnt/c/Program Files/WezTerm/wezterm-gui.exe",
   "svelte.enable-ts-plugin": true,
-  "diffEditor.hideUnchangedRegions.enabled": true,
   "editor.semanticHighlighting.enabled": true,
   "terminal.integrated.minimumContrastRatio": 1,
   "window.titleBarStyle": "custom",
@@ -71,5 +72,7 @@
   "gruvboxMaterial.darkContrast": "hard",
   "gruvboxMaterial.darkWorkbench": "flat",
   "gruvboxMaterial.italicComments": false,
-  "gruvboxMaterial.darkPalette": "mix"
+  "gruvboxMaterial.darkPalette": "mix",
+  "zig.zls.enabled": "on",
+  "editor.cursorSmoothCaretAnimation": "on"
 }
