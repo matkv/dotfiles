@@ -34,7 +34,9 @@
   "keyboard.dispatch": "keyCode",
   "editor.stickyScroll.enabled": true,
   "excalidraw.theme": "dark",
-  "security.allowedUNCHosts": ["wsl.localhost"],
+  "security.allowedUNCHosts": [
+    "wsl.localhost"
+  ],
   "explorer.confirmDragAndDrop": false,
   "launch": {
     "configurations": [],
@@ -49,10 +51,7 @@
     "csharp": true,
     "go": true
   },
-  "json.schemas": [
-  
-  
-  ],
+  "json.schemas": [],
   "vscode-neovim.useWSL": true,
   "vscode-neovim.compositeKeys": {},
   "remote.autoForwardPortsSource": "hybrid",
@@ -74,5 +73,6 @@
   "gruvboxMaterial.italicComments": false,
   "gruvboxMaterial.darkPalette": "mix",
   "zig.zls.enabled": "on",
-  "editor.cursorSmoothCaretAnimation": "on"
+  "editor.cursorSmoothCaretAnimation": "on",
+  "window.density.editorTabHeight": "compact"
 }
