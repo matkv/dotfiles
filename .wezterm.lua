@@ -42,4 +42,7 @@ config.colors = {
 config.initial_rows = 30
 config.initial_cols = 110
 
+config.win32_system_backdrop = "Acrylic"
+config.window_background_opacity = 0.86
+
 return config
