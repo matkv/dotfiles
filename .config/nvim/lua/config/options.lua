@@ -4,10 +4,5 @@
 
 local opt = vim.opt
 opt.relativenumber = false -- relative line numbers
-opt.spell = false -- disable spell check by default
+opt.spell = false          -- disable spell check by default
 opt.termguicolors = true
-
-local api = vim.api
-api.nvim_set_hl(0, "Normal", { bg = "none" })
-api.nvim_set_hl(0, "NormalNC", { bg = "none" })
-api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
