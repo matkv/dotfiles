@@ -7,8 +7,10 @@
     "name": "Ashes",
     "accent": "Base0D"
   },
+  "transparency_alpha": 15,
   "height": 30,
   "margin": { "horizontal": 5, "vertical": 5},
+  "widget_spacing": 20,
   "left_widgets": [
     {
       "Komorebi": {
@@ -44,12 +46,12 @@
     },
     {
       "Memory": {
-        "enable": true
+        "enable": false
       }
     },
     {
       "Network": {
-        "enable": true,
+        "enable": false,
         "show_total_data_transmitted": true,
         "show_network_activity": true
       }
