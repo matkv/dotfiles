@@ -7,6 +7,8 @@
     "name": "Ashes",
     "accent": "Base0D"
   },
+  "height": 30,
+  "margin": { "horizontal": 5, "vertical": 5},
   "left_widgets": [
     {
       "Komorebi": {
@@ -37,7 +39,7 @@
     },
     {
       "Storage": {
-        "enable": true
+        "enable": false
       }
     },
     {
