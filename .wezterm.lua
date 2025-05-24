@@ -15,7 +15,6 @@ config.window_decorations = "RESIZE"
 config.window_frame = {
 	active_titlebar_bg = "rgba(0 0 0 0)",
 	inactive_titlebar_bg = "rgba(0 0 0 0)",
-	font_size = 11.0,
 }
 
 config.colors = {
@@ -44,5 +43,7 @@ config.initial_cols = 110
 
 config.win32_system_backdrop = "Acrylic"
 config.window_background_opacity = 0.86
+
+config.default_prog = { "pwsh.exe", "-NoLogo", "-NoExit", "-Command", "fastfetch" }
 
 return config
