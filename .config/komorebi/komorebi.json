@@ -4,9 +4,9 @@
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
   "default_workspace_padding": 3,
-  "default_container_padding": 5,
+  "default_container_padding": 3,
   "border": false,
-  "border_width": 3,
+  "border_width": 1,
   "border_offset": -1,
   "theme": {
     "palette": "Base16",
