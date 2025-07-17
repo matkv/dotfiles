@@ -103,6 +103,7 @@ if vim.g.current_hostname == "omen" or vim.g.current_hostname == "acer" then
       templates = {
         folder = "templates",
       },
+      disable_frontmatter = true,
     },
   }
 end
