@@ -1,0 +1,48 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Goodreads - To Read",
+	"behavior": "create",
+	"noteContentFormat": "",
+	"properties": [
+		{
+			"name": "index",
+			"value": "[[Books]]",
+			"type": "text"
+		},
+		{
+			"name": "title",
+			"value": "{{schema:@Book:name}}",
+			"type": "text"
+		},
+		{
+			"name": "author",
+			"value": "{{schema:@Book:author[0].name}}",
+			"type": "multitext"
+		},
+		{
+			"name": "status",
+			"value": "To-Read",
+			"type": "multitext"
+		},
+		{
+			"name": "year",
+			"value": "",
+			"type": "number"
+		},
+		{
+			"name": "rating",
+			"value": "",
+			"type": "number"
+		},
+		{
+			"name": "date",
+			"value": "",
+			"type": "date"
+		}
+	],
+	"triggers": [
+		"https://www.goodreads.com"
+	],
+	"noteNameFormat": "{{schema:@Book:name}} -  {{schema:@Book:author[0].name}}",
+	"path": "Database/Index/Books"
+}
