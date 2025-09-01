@@ -1,0 +1,31 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "Web Clipping",
+	"behavior": "create",
+	"noteContentFormat": "{{content}}",
+	"properties": [
+		{
+			"name": "description",
+			"value": "",
+			"type": "text"
+		},
+		{
+			"name": "tags",
+			"value": "web-clipping",
+			"type": "multitext"
+		},
+		{
+			"name": "link",
+			"value": "{{url}}",
+			"type": "text"
+		},
+		{
+			"name": "date",
+			"value": "{{time}}",
+			"type": "text"
+		}
+	],
+	"triggers": [],
+	"noteNameFormat": "{{title}}",
+	"path": "Inbox/Web Clippings"
+}
