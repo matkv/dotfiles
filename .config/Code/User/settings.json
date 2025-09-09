@@ -59,7 +59,6 @@
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "chat.editing.confirmEditRequestRetry": false,
   "terminal.external.windowsExec": "C:\\\\Program Files\\\\WezTerm\\\\wezterm-gui.exe",
-  "terminal.external.linuxExec": "/mnt/c/Program Files/WezTerm/wezterm-gui.exe",
   "svelte.enable-ts-plugin": true,
   "editor.semanticHighlighting.enabled": true,
   "terminal.integrated.minimumContrastRatio": 1,

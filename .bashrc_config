@@ -6,35 +6,28 @@
 #     . $HOME/.bashrc_config
 # fi
 
-export PATH=$PATH:/usr/bin/xclip
-export PATH=$PATH:/usr/bin/omnisharp
-export PATH=$PATH:/usr/bin/exercism # remove if I'm not using exercism on a new system
-export PATH=$PATH:/usr/bin/rust-analyzer
-export PATH=$PATH:/usr/bin/go 
-export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/.go
 export PATH=$PATH:~/.go/bin/
-export PATH=$PATH:/usr/bin/zig
 
 alias ll="ls -l"
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias trackedfiles="dotfiles ls-tree --full-tree -r HEAD"
+# alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+# alias trackedfiles="dotfiles ls-tree --full-tree -r HEAD"
 alias df="df -h"
 alias nivm="nvim"
 alias nvmi="nvim"
 alias mvc="mullvad connect"
 alias mvd="mullvad disconnect"
-alias co="cd /home/matko/documents/Obsidian\ Vault/"
-alias obsidian="nvim /mnt/c/Users/matko/Documents/Obsidian\ Vault/notepad.md"
+# alias co="cd /home/matko/documents/Obsidian\ Vault/"
+# alias obsidian="nvim /mnt/c/Users/matko/Documents/Obsidian\ Vault/notepad.md"
 alias update="sudo pacman -Syu"
 alias ff="fastfetch"
-alias updateutils="go install github.com/matkv/utils@latest"
+# alias updateutils="go install github.com/matkv/utils@latest"
 alias z="zellij"
-alias ds="dotfiles status -s"
-alias start-tailscale="sudo tailscaled"
-alias tailscalehugo="hugo serve --bind=0.0.0.0 --port=1313"
-alias tailscalestartproject="npm run dev -- --host 0.0.0.0 --port 3000"
-alias updatezig="yay -S zig-nightly-bin"
+# alias ds="dotfiles status -s"
+# alias start-tailscale="sudo tailscaled"
+# alias tailscalehugo="hugo serve --bind=0.0.0.0 --port=1313"
+# alias tailscalestartproject="npm run dev -- --host 0.0.0.0 --port 3000"
+# alias updatezig="yay -S zig-nightly-bin"
 
 # ChatGPT magic to print my bash aliases
 
