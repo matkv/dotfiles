@@ -73,5 +73,7 @@
   "gruvboxMaterial.darkPalette": "mix",
   "zig.zls.enabled": "on",
   "editor.cursorSmoothCaretAnimation": "on",
-  "window.density.editorTabHeight": "compact"
+  "window.density.editorTabHeight": "compact",
+  "go.toolsGopath": "~/.go",
+  "go.gopath": "~/.go"
 }
