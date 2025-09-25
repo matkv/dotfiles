@@ -34,7 +34,7 @@ return {
               { icon = " ", key = "f", desc = "Find File",       action = ":lua Snacks.dashboard.pick('files')" },
               { icon = " ", key = "n", desc = "New File",        action = ":ene | startinsert" },
               { icon = " ", key = "s", desc = "Restore Session", section = "session" },
-              { icon = "", key = "o", desc = "Open Obsidian vault", action = ":e /mnt/c/Users/matko/Documents/Obsidian Vault/notepad.md"},
+              { icon = "", key = "o", desc = "Open Obsidian vault", action = ":cd ~/documents/Obsidian\\ Vault/ | edit Inbox/Notepad.md"},
               { icon = " ", key = "q", desc = "Quit",            action = ":qa" } },
             { title = "Projects", section = "projects", indent = 0, padding = 1 },
             { title = "Neovim", indent = 0, padding = 2,
