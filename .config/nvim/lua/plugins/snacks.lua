@@ -26,6 +26,15 @@ return {
           return ("Good %s, %s :)"):format(day_part, username)
         end
 
+        -- Get the hostname to determine which vault path to use
+        local hostname = vim.g.current_hostname or vim.fn.hostname()
+        local vault_path
+        if hostname == "omen" then
+          vault_path = "/mnt/c/Users/matko/Documents/Obsidian\\ Vault/"
+        elseif hostname == "arch" then
+          vault_path = "~/documents/Obsidian\\ Vault/"
+        end
+
           -- stylua: ignore
           return {
             { padding = 0, align = "center", text = { header, hl = "header" } },
@@ -34,7 +43,7 @@ return {
               { icon = " ", key = "f", desc = "Find File",       action = ":lua Snacks.dashboard.pick('files')" },
               { icon = " ", key = "n", desc = "New File",        action = ":ene | startinsert" },
               { icon = " ", key = "s", desc = "Restore Session", section = "session" },
-              { icon = "", key = "o", desc = "Open Obsidian vault", action = ":cd ~/documents/Obsidian\\ Vault/ | edit Inbox/Notepad.md"},
+              { icon = "", key = "o", desc = "Open Obsidian vault", action = vault_path and (":cd " .. vault_path .. " | edit Inbox/Notepad.md") or ":echo 'No Obsidian vault configured for this hostname'" },
               { icon = " ", key = "q", desc = "Quit",            action = ":qa" } },
             { title = "Projects", section = "projects", indent = 0, padding = 1 },
             { title = "Neovim", indent = 0, padding = 2,

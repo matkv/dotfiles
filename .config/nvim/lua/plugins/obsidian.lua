@@ -1,4 +1,22 @@
-if vim.g.current_hostname == "omen" or vim.g.current_hostname == "acer" or vim.g.current_hostname == "arch" then
+-- Get the hostname to determine which workspace to use
+local hostname = vim.g.current_hostname or vim.fn.hostname()
+
+-- Define workspaces based on hostname
+local workspace
+if hostname == "omen" then
+  workspace = {
+    name = "omen",
+    path = "/mnt/c/Users/matko/Documents/Obsidian Vault/",
+  }
+elseif hostname == "arch" then
+  workspace = {
+    name = "arch",
+    path = "~/documents/Obsidian Vault/",
+  }
+end
+
+-- Only return the plugin config if we have a valid workspace for this hostname
+if workspace then
   return {
     "obsidian-nvim/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
@@ -15,12 +33,9 @@ if vim.g.current_hostname == "omen" or vim.g.current_hostname == "acer" or vim.g
     ---@type obsidian.config
     opts = {
       workspaces = {
-        {
-          name = "arch",
-          path = "~/documents/Obsidian Vault/",
-        },
+        workspace,
       },
-      disable_frontmatter = true
+      disable_frontmatter = true,
     },
   }
 end
