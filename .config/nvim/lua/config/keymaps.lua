@@ -28,7 +28,7 @@ map("n", "ge", "G", { desc = "Last line" })
 --map("n", "<M-dd>", "_dd", { desc = "Delete line without copying" })
 
 vim.keymap.set("n", "gf", function()
-  if require("obsidian").util.cursor_on_markdown_link() then
+  if require("obsidian").util.cursor_link() then
     return "<cmd>ObsidianFollowLink<CR>"
   else
     return "gf"
