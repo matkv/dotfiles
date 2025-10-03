@@ -4,5 +4,8 @@
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
-  command = "setlocal nospell",
+  callback = function()
+    vim.cmd("setlocal nospell")
+    vim.diagnostic.disable(0)
+  end,
 })
