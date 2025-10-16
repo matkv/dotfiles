@@ -50,7 +50,7 @@
     "max_width_columns": 80,
     "thumb_border": "full",
     "thumb": "always",
-    "show": "auto"
+    "show": "never"
   },
   "ui_font_weight": 400.0,
   "telemetry": {
