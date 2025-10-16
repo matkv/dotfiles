@@ -1,0 +1,68 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "project_panel": {
+    "entry_spacing": "comfortable",
+    "sticky_scroll": true
+  },
+  "git": {
+    "inline_blame": {
+      "padding": 15,
+      "delay_ms": 3,
+      "enabled": true
+    }
+  },
+  "bottom_dock_layout": "contained",
+  "tabs": {
+    "file_icons": true,
+    "git_status": false
+  },
+  "tab_bar": {
+    "show": true
+  },
+  "title_bar": {
+    "show_branch_icon": false
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gpt-5"
+    },
+    "model_parameters": []
+  },
+  "inlay_hints": {
+    "enabled": false
+  },
+  "indent_guides": {
+    "coloring": "fixed"
+  },
+  "minimap": {
+    "max_width_columns": 80,
+    "thumb_border": "full",
+    "thumb": "always",
+    "show": "auto"
+  },
+  "ui_font_weight": 400.0,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "vim_mode": true,
+  "ui_font_size": 16.0,
+  "buffer_font_size": 14.0,
+  "theme": {
+    "mode": "system",
+    "light": "Gruvbox Light",
+    "dark": "Gruvbox Dark Soft"
+  }
+}
