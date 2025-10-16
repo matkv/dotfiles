@@ -1,25 +1,102 @@
 {
-  "general_settings": {
-    "showMoreActionsButton": false,
-    "betaFeatures": false,
-    "legacyMode": false,
-    "silentOpen": false
-  },
-  "template_1730593331637sboh2lik1": [
-    "ᯡࡅ䁬⁼ၦǸڀƠ嘢㢽尦扢Ƽĸߐƀঠමǌ炠ڤĬ˸Ց䈠ᥐ嚔(u嵘[⯐ƕ熌ⷼ嶠᮸⤠❞癲叚塠ׄၐಆ,昼离⤥⻼å孛昕嘸⾊⽎␀ϛ㦩䜆媝㜮䖵䤍怦લ場椾ⵏᲿ'所۶̠ż嫴ՠᝠŬ⭌呴ň⌙拙ᠼ媻䕶株檰ೕ᷼羈ƕ▮◆'᧮揧ፌ獴䊠ϧᬢÊ  "
-  ],
-  "template_1728168375472j58t6lh7v": [
-    "ᯡࡅ䁬⁼ၦǸʀήǐ傆Ȫ怫ᤠ囘倥溠ᬠᘨΑ-Р瘢థ堪ㆤĊ⸠䘠С䊴怠ᵅ㠢㬨Ų焉ᥭ䲯㍡⻴洉䀧嫭瀬㖵滓㖡䚠㥮⸠扦᷶符͆ٲ䮠⾿䦤ॎ囅瀣岤Ôጩ㒼䡅䎅攰ᣐ㗳仒坒㯐ӭᆶ‪з勘>峸ႄ噠捋ጒ瀣ᲀú偨⽂ᔣට䑂⋩ैؠ垅ᤣᦽ䷫挑祹棹ᒳ㳥澩㦬䀩熰⹶猝౽⡸⽺ጧl䐰͸婬~䦇䆢ᅁ毡ᆇ崤嚋༶ē䛒┻ㄡ瘧Ⱓ⋈䁇᧧噡⸣ⷩ́とᄬһ湌៾㖠₶U㝸䇠ृ⒧⇠呈灦伀㧾ŧ穗ქ䀢㧦๞烐䅁Ὠ䅺㌴䘃ⓩ⁾⹊㶄⦁䋥吖穼Ზ㏚௛ᶔධ槕Ǧ儀嶥⯕ਸ਼㘠ຆ歑ª␫३ቐ֧㔤瓾ήᩱ୦⿠̈癪䷆殱嫰㭨ᰑ  "
-  ],
   "highlighter_settings": {
     "highlighterEnabled": true,
     "alwaysShowHighlights": true,
     "highlightBehavior": "replace-content"
   },
+  "template_17567482680498uxpovm": {
+    "schemaVersion": "0.1.0",
+    "name": "Web Clipping",
+    "behavior": "create",
+    "noteContentFormat": "{{content}}",
+    "properties": [
+      {
+        "id": "1756748268049gxcdmsi",
+        "name": "description",
+        "value": "",
+        "type": "text"
+      },
+      {
+        "id": "1756748268049p7nzaja",
+        "name": "tags",
+        "value": "web-clipping",
+        "type": "multitext"
+      },
+      {
+        "id": "1756748268049xkqyfeu",
+        "name": "link",
+        "value": "{{url}}",
+        "type": "text"
+      },
+      {
+        "id": "1756748268049dy0w6en",
+        "name": "date",
+        "value": "{{time}}",
+        "type": "date"
+      }
+    ],
+    "triggers": [],
+    "noteNameFormat": "{{title}}",
+    "path": "Inbox/Web Clippings",
+    "id": "17567482680498uxpovm"
+  },
+  "property_types": [
+    {
+      "name": "title",
+      "type": "text"
+    },
+    {
+      "name": "description",
+      "type": "text"
+    },
+    {
+      "name": "tags",
+      "type": "multitext"
+    },
+    {
+      "name": "link",
+      "type": "text"
+    },
+    {
+      "name": "date",
+      "type": "date"
+    },
+    {
+      "name": "year",
+      "type": "number"
+    },
+    {
+      "name": "status",
+      "type": "multitext"
+    },
+    {
+      "name": "rating",
+      "type": "number"
+    },
+    {
+      "name": "index",
+      "type": "text"
+    },
+    {
+      "name": "author",
+      "type": "multitext",
+      "defaultValue": "{{author|split:\", \"|wikilink|join}}"
+    }
+  ],
+  "template_list": [
+    "17567482680498uxpovm",
+    "17567463610075rpqyal9p"
+  ],
+  "migrationVersion": 1,
   "vaults": [],
+  "reader_settings": {
+    "fontSize": 1.5,
+    "lineHeight": 1.6,
+    "maxWidth": 38,
+    "theme": "default",
+    "themeMode": "auto"
+  },
   "interpreter_settings": {
-    "openaiApiKey": "",
-    "anthropicApiKey": "",
     "interpreterModel": "gpt-4o-mini",
     "models": [
       {
@@ -65,37 +142,79 @@
         "enabled": true
       }
     ],
+    "providers": [],
     "interpreterEnabled": false,
     "interpreterAutoRun": false,
     "defaultPromptContext": "{{fullHtml|strip_tags:(\"script,h1,h2,h3,h4,h5,h6,meta,a,ol,ul,li,p,em,strong,i,b,img,video,audio,math,tablecite,strong,td,th,tr,caption,u\")|strip_attr:(\"alt,src,href,id,content,property,name,datetime,title\")}}"
   },
-  "property_types": [
-    {
-      "name": "title",
-      "type": "text",
-      "defaultValue": "{{title}}"
-    },
-    {
-      "name": "description",
-      "type": "text",
-      "defaultValue": "{{description}}"
-    },
-    {
-      "name": "tags",
-      "type": "multitext",
-      "defaultValue": "clippings"
-    },
-    {
-      "name": "link",
-      "type": "text"
-    },
-    {
-      "name": "date",
-      "type": "text"
-    }
-  ],
-  "template_list": [
-    "1728168375472j58t6lh7v",
-    "1730593331637sboh2lik1"
-  ]
+  "general_settings": {
+    "showMoreActionsButton": false,
+    "betaFeatures": false,
+    "legacyMode": false,
+    "silentOpen": false,
+    "openBehavior": "embedded",
+    "saveBehavior": "addToObsidian"
+  },
+  "template_17567463610075rpqyal9p": {
+    "id": "17567463610075rpqyal9p",
+    "name": "Goodreads - To Read",
+    "behavior": "create",
+    "noteNameFormat": "{{schema:@Book:name}} -  {{schema:@Book:author[0].name}}",
+    "path": "Database/Index/Books",
+    "noteContentFormat": "",
+    "properties": [
+      {
+        "id": "1756747776626l50avlsff",
+        "name": "index",
+        "value": "[[Books]]",
+        "type": "text"
+      },
+      {
+        "id": "1756747797162x11llbiif",
+        "name": "title",
+        "value": "{{schema:@Book:name}}",
+        "type": "text"
+      },
+      {
+        "id": "1756747803686ywod7x1wt",
+        "name": "author",
+        "value": "{{schema:@Book:author[0].name}}",
+        "type": "multitext"
+      },
+      {
+        "id": "175674781582894pll293a",
+        "name": "status",
+        "value": "To-Read",
+        "type": "multitext"
+      },
+      {
+        "id": "1756747859673shfw01saj",
+        "name": "year",
+        "value": "",
+        "type": "number"
+      },
+      {
+        "id": "1756747955861zvz7n3tl2",
+        "name": "rating",
+        "value": "",
+        "type": "number"
+      },
+      {
+        "id": "1756747994470ti44ztqnh",
+        "name": "date",
+        "value": "",
+        "type": "date"
+      }
+    ],
+    "triggers": [
+      "https://www.goodreads.com"
+    ],
+    "context": ""
+  },
+  "stats": {
+    "addToObsidian": 5,
+    "saveFile": 0,
+    "copyToClipboard": 0,
+    "share": 0
+  }
 }
