@@ -28,6 +28,7 @@ alias ds="dotfiles status -s"
 # alias tailscalehugo="hugo serve --bind=0.0.0.0 --port=1313"
 # alias tailscalestartproject="npm run dev -- --host 0.0.0.0 --port 3000"
 # alias updatezig="yay -S zig-nightly-bin"
+alias conf="cd ~/.config"
 
 # ChatGPT magic to print my bash aliases
 
