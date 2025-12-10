@@ -75,5 +75,8 @@
   "editor.cursorSmoothCaretAnimation": "on",
   "window.density.editorTabHeight": "compact",
   "go.toolsGopath": "~/.go",
-  "go.gopath": "~/.go"
+  "go.gopath": "~/.go",
+  "chat.agentSessionsViewLocation": "single-view",
+  "inlineChat.enableV2": true,
+  "terminal.integrated.suggest.enabled": true
 }
