@@ -29,6 +29,8 @@ alias ds="dotfiles status -s"
 # alias tailscalestartproject="npm run dev -- --host 0.0.0.0 --port 3000"
 # alias updatezig="yay -S zig-nightly-bin"
 alias conf="cd ~/.config"
+alias lg="lazygit"
+alias lgds="lg -g $HOME/.dotfiles/ -w $HOME"
 
 # ChatGPT magic to print my bash aliases
 
