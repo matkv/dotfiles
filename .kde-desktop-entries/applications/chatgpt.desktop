@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=ChatGPT
+Comment=Open ChatGPT
+Exec=firefox --class=ChatGPT --name=ChatGPT -P chatgpt --no-remote https://chatgpt.com
+Icon=/home/matko/.local/share/icons/chatgpt.svg
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+StartupWMClass=chatgpt

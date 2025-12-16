@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=TeuxDeux
+Comment=Open TeuxDeux
+Exec=firefox --class=TeuxDeux --name=TeuxDeux -P teuxdeux --no-remote https://teuxdeux.com/home
+Icon=/home/matko/.local/share/icons/teuxdeux.svg
+Terminal=false
+Type=Application
+Categories=Network;WebBrowser;
+StartupWMClass=TeuxDeux
