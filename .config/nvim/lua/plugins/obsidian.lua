@@ -6,12 +6,12 @@ local workspace
 if hostname == "omen" then
   workspace = {
     name = "omen",
-    path = "/mnt/c/Users/matko/Documents/Obsidian Vault/",
+    path = vim.fn.expand("/mnt/c/Users/matko/Documents/Obsidian Vault/"),
   }
 elseif hostname == "arch" then
   workspace = {
     name = "arch",
-    path = "~/documents/Obsidian Vault/",
+    path = vim.fn.expand("~/documents/Obsidian Vault/"),
   }
 end
 
@@ -21,21 +21,20 @@ if workspace then
     "obsidian-nvim/obsidian.nvim",
     version = "*", -- recommended, use latest release instead of latest commit
     ft = "markdown",
-    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-    -- event = {
-    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
-    --   -- refer to `:h file-pattern` for more examples
-    --   "BufReadPre path/to/my-vault/*.md",
-    --   "BufNewFile path/to/my-vault/*.md",
-    -- },
-    ---@module 'obsidian'
-    ---@type obsidian.config
+
     opts = {
-      workspaces = {
-        workspace,
-      },
+      legacy_commands = false,
       disable_frontmatter = true,
+
+      workspaces = { workspace },
+    },
+    callbacks = {
+      enter_note = function(note)
+        local buf = note and note.bufnr or vim.api.nvim_get_current_buf()
+        vim.keymap.set("n", "<CR>", function()
+          require("obsidian.api").smart_action()
+        end, { buffer = buf, desc = "Obsidian Smart Action" })
+      end,
     },
   }
 end
