@@ -79,5 +79,6 @@
   "chat.agentSessionsViewLocation": "single-view",
   "inlineChat.enableV2": true,
   "terminal.integrated.suggest.enabled": true,
-  "go.diagnostic.vulncheck": "Imports"
+  "go.diagnostic.vulncheck": "Imports",
+  "github.copilot.nextEditSuggestions.enabled": true
 }
