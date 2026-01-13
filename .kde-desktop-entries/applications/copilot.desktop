@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Copilot
+Comment=Open Github Copilot
+Exec=firefox --class=GithubCopilot --name=GithubCopilot -P copilot --no-remote https://github.com/copilot
+Icon=/home/matko/.local/share/icons/githubcopilot.png
+Terminal=false
+Type=Application
+Categories=Development;IDE;
+StartupWMClass=GithubCopilot

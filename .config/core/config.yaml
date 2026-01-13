@@ -1,3 +1,4 @@
 paths:
-    obsidianvault: /home/matkv/documents/Obsidian Vault
-device: wsl
+    obsidianvault: /home/matko/documents/Obsidian Vault/
+    website: /home/matko/dev/matkv.dev/
+device: laptop
