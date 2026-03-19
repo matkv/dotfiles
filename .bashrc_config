@@ -32,6 +32,7 @@ alias ds="dotfiles status -s"
 alias conf="cd ~/.config"
 alias lg="lazygit"
 alias lgds="lg -g $HOME/.dotfiles/ -w $HOME"
+alias obsync="cd ~/obsidian/ &&ob sync --continuous"
 
 # ChatGPT magic to print my bash aliases
 
