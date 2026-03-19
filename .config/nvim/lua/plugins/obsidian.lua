@@ -6,7 +6,7 @@ local workspace
 if hostname == "omen" then
   workspace = {
     name = "omen",
-    path = vim.fn.expand("/mnt/c/Users/matko/Documents/Obsidian Vault/"),
+    path = vim.fn.expand("~/obsidian/"),
   }
 elseif hostname == "arch" then
   workspace = {
@@ -19,22 +19,13 @@ end
 if workspace then
   return {
     "obsidian-nvim/obsidian.nvim",
-    version = "*", -- recommended, use latest release instead of latest commit
-    ft = "markdown",
-
+    version = "*",
     opts = {
       legacy_commands = false,
-      disable_frontmatter = true,
-
+      frontmatter = {
+        enabled = false,
+      },
       workspaces = { workspace },
-    },
-    callbacks = {
-      enter_note = function(note)
-        local buf = note and note.bufnr or vim.api.nvim_get_current_buf()
-        vim.keymap.set("n", "<CR>", function()
-          require("obsidian.api").smart_action()
-        end, { buffer = buf, desc = "Obsidian Smart Action" })
-      end,
     },
   }
 end
