@@ -30,7 +30,7 @@ return {
         local hostname = vim.g.current_hostname or vim.fn.hostname()
         local vault_path
         if hostname == "omen" then
-          vault_path = "/mnt/c/Users/matko/Documents/Obsidian\\ Vault/"
+          vault_path = "~/obsidian/"
         elseif hostname == "arch" then
           vault_path = "~/documents/Obsidian\\ Vault/"
         end
