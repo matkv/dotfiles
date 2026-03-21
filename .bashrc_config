@@ -79,6 +79,10 @@ commands() {
     echo
 }
 
+if [ -f $HOME/.env ]; then
+    . $HOME/.env
+fi
+
 cd ~
 fastfetch
 eval "$(starship init bash)"
