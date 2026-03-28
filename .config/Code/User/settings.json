@@ -66,7 +66,6 @@
   "gopls": {
     "ui.semanticTokens": true
   },
-  "workbench.colorTheme": "Gruvbox Dark Soft",
   "gruvboxMaterial.darkContrast": "hard",
   "gruvboxMaterial.darkWorkbench": "flat",
   "gruvboxMaterial.italicComments": false,
@@ -80,5 +79,6 @@
   "inlineChat.enableV2": true,
   "terminal.integrated.suggest.enabled": true,
   "go.diagnostic.vulncheck": "Imports",
-  "github.copilot.nextEditSuggestions.enabled": true
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "chat.viewSessions.orientation": "stacked"
 }
