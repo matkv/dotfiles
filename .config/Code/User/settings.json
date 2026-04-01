@@ -80,5 +80,6 @@
   "terminal.integrated.suggest.enabled": true,
   "go.diagnostic.vulncheck": "Imports",
   "github.copilot.nextEditSuggestions.enabled": true,
-  "chat.viewSessions.orientation": "stacked"
+  "chat.viewSessions.orientation": "stacked",
+  "editor.rulers": [{ "column": 100, "color": "#d3d3d305" }],
 }
