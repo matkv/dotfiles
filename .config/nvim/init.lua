@@ -309,6 +309,25 @@ vim.pack.add({
 require("nvim-autopairs").setup()
 require("todo-comments").setup()
 
+-- INFO: bufferline
+vim.pack.add({ "https://github.com/akinsho/bufferline.nvim" }, { confirm = false })
+
+require("bufferline").setup({
+  options = {
+    diagnostics = "nvim_lsp",
+    show_buffer_close_icons = false,
+    show_close_icon = false,
+    separator_style = "thin",
+    offsets = {
+      { filetype = "NvimTree", text = "Files", highlight = "Directory", text_align = "left" },
+    },
+  },
+})
+
+vim.keymap.set("n", "<Tab>",   "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
+vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>",          { desc = "[B]uffer [D]elete" })
+
 -- INFO: flash.nvim - enhanced motion/search
 vim.pack.add({ "https://github.com/folke/flash.nvim" }, { confirm = false })
 
