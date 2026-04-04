@@ -49,6 +49,9 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("n", "gh", "^", { desc = "Move to the beginning of the line" })
 vim.keymap.set("n", "gl", "$", { desc = "Move to the end of the line" })
 
+vim.pack.add({ "https://github.com/sainnhe/gruvbox-material" }, { confirm = false })
+vim.cmd.colorscheme("gruvbox-material")
+
 vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" }, { confirm = false })
 
 vim.treesitter.language.add("json", { filetype = "jsonc" })
@@ -156,6 +159,7 @@ local pickers = require("telescope.builtin")
 
 vim.keymap.set("n", "<leader><leader>", pickers.find_files, { desc = "Find files TEST MATKO" })
 -- TODO add remaining ones from the example
+-- like searching the neovim help from a fuzzy picker and so on
 
 vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" }, { confirm = false })
 
@@ -164,7 +168,26 @@ require("lualine").setup({
 		section_separators = { left = "", right = "" },
 		component_separators = { left = "", right = "" },
 	},
+	tabline = {
+		lualine_a = {
+			{
+				"buffers",
+				show_filename_only = true,
+				show_modified_status = true,
+				mode = 2, -- show buffer name + index
+				symbols = {
+					modified = " ●",
+					alternate_file = "",
+					directory = "",
+				},
+			},
+		},
+	},
 })
+
+vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" }) -- shift + l, next buffer
+vim.keymap.set("n", "<S-h>", "<cmd>bprev<CR>", { desc = "Prev buffer" }) -- shift + h, previous buffer
+vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Delete buffer" }) -- SPC + bd, close buffer
 
 vim.pack.add({ "https://github.com/folke/which-key.nvim" }, { confirm = false })
 
@@ -190,10 +213,6 @@ local wk = require("which-key")
 --   }
 -- })
 
--- TODO remaining
-
--- TODO add colorscheme
-
 vim.pack.add({
 	"https://github.com/windwp/nvim-autopairs", -- auto pairs
 	"https://github.com/folke/todo-comments.nvim", -- highlight TODO/INFO/WARN comments
@@ -201,3 +220,5 @@ vim.pack.add({
 
 require("nvim-autopairs").setup()
 require("todo-comments").setup()
+
+-- TODO maybe add trouble.nvim
