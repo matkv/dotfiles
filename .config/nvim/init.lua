@@ -1,72 +1,35 @@
--- set <space> as the leader key
--- must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+local g = vim.g
+local o = vim.o
+local opt = vim.opt
 
--- enable true color support
-vim.opt.termguicolors = true
+g.mapleader = " "
+g.maplocalleader = " "
 
--- make line numbers default
-vim.opt.number = true
-
--- enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = "a"
-
--- don't show the mode, since it's already in the status line
-vim.opt.showmode = false
-
--- sync clipboard between OS and Neovim.
---  remove this option if you want your OS clipboard to remain independent.
---  see `:help 'clipboard'`
-vim.opt.clipboard = "unnamedplus"
-
--- enable break indent
-vim.opt.breakindent = true
-
--- save undo history
-vim.opt.undofile = true
-
--- case-insensitive searching UNLESS \C or one or more capital letters in the search term
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-
--- keep signcolumn on by default
-vim.opt.signcolumn = "yes"
-
--- decrease update time
-vim.opt.updatetime = 250
-
--- decrease mapped sequence wait time
--- displays which-key popup sooner
-vim.opt.timeoutlen = 300
-
--- configure how new splits should be opened
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-
--- sets how neovim will display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣", }
-
--- preview substitutions live, as you type!
-vim.opt.inccommand = "split"
-
--- show which line your cursor is on
-vim.opt.cursorline = true
-
--- set highlight on search, but clear on pressing <Esc> in normal mode
-vim.opt.hlsearch = true
-
--- enable line wrapping
-vim.opt.wrap = true
-
--- formatting
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-vim.opt.textwidth = 80
+o.termguicolors = true
+o.number = true
+o.mouse = "a"
+o.showmode = false
+o.clipboard = "unnamedplus"
+o.breakindent = true
+o.undofile = true
+o.ignorecase = true
+o.smartcase = true
+o.signcolumn = "yes"
+o.cursorline = true
+o.scrolloff = 5
+o.updatetime = 250
+o.timeoutlen = 300
+o.splitright = true
+o.splitbelow = true
+o.list = true
+-- opt.listchars = { tab = "» ", trail = "·", nbsp = "␣", }  # decide about this
+o.inccommand = "split"
+o.hlsearch = true
+o.wrap = true
+o.tabstop = 2
+o.shiftwidth = 2
+o.expandtab = true
+o.textwidth = 80
 
 vim.diagnostic.config({
   signs = {
@@ -82,224 +45,3 @@ vim.diagnostic.config({
 
 -- clear search highlights with <Esc>
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
-
--- INFO: plugins
--- we install plugins with neovim's builtin package manager: vim.pack
--- and then enable/configure them by calling their setup functions.
---
--- (see `:h vim.pack` for more details on how it works)
--- you can press `gx` on any of the plugin urls below to open them in your
--- browser and check out their documentation and functionality.
--- alternatively, you can run `:h {plugin-name}` to read their documentation.
---
--- plugins are then loaded and configured with a call to `setup` functions
--- provided by each plugin. this is not a rule of neovim but rather a convention
--- followed by the community.
--- these setup calls take a table as an agument and their expected contents can
--- vary wildly. refer to each plugin's documentation for details.
-
--- INFO: colorscheme
-vim.pack.add({ "https://github.com/sainnhe/gruvbox-material" }, { confirm = false })
-vim.cmd.colorscheme("gruvbox-material")
-
--- INFO: formatting and syntax highlighting
-vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" }, { confirm = false })
-
-require("nvim-treesitter").setup({
-  install_dir = vim.fn.stdpath("data") .. "/site",
-})
-
-require("nvim-treesitter").install({ "lua", "c", "rust", "go" })
-
-vim.api.nvim_create_autocmd("FileType", {
-  callback = function()
-    local lang = vim.treesitter.language.get_lang(vim.bo.filetype)
-    if lang then
-      pcall(vim.treesitter.start)
-    end
-  end,
-})
-
--- INFO: completion engine
-vim.pack.add({ "https://github.com/saghen/blink.cmp" }, { confirm = false })
-
-require("blink.cmp").setup({
-  completion = {
-    documentation = {
-      auto_show = true,
-    },
-  },
-
-  keymap = {
-    -- these are the default blink keymaps
-    ['<C-n>'] = { 'select_next', 'fallback_to_mappings' },
-    ['<C-p>'] = { 'select_prev', 'fallback_to_mappings' },
-    ['<C-y>'] = { 'select_and_accept', 'fallback' },
-    ['<C-e>'] = { 'cancel', 'fallback' },
-
-    ['<Tab>'] = { 'snippet_forward', 'select_next', 'fallback' },
-    ['<S-Tab>'] = { 'snippet_backward', 'select_prev', 'fallback' },
-    ['<CR>'] = { 'select_and_accept', 'fallback' },
-    ['<Esc>'] = { 'cancel', 'hide_documentation', 'fallback' },
-
-    ['<C-space>'] = { 'show', 'show_documentation', 'hide_documentation' },
-
-    ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
-    ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
-
-    ['<C-k>'] = { 'show_signature', 'hide_signature', 'fallback' },
-  },
-
-  fuzzy = {
-    implementation = "lua",
-  },
-})
-
--- INFO: lsp server installation and configuration
-
--- lsp servers we want to use and their configuration
--- see `:h lspconfig-all` for available servers and their settings
-local lsp_servers = {
-  lua_ls = {
-    -- https://luals.github.io/wiki/settings/ | `:h nvim_get_runtime_file`
-    Lua = { workspace = { library = vim.api.nvim_get_runtime_file("lua", true) }, },
-  },
-}
-
-vim.pack.add({
-  "https://github.com/neovim/nvim-lspconfig", -- default configs for lsps
-
-  -- NOTE: if you'd rather install the lsps through your OS package manager you
-  -- can delete the next three mason-related lines and their setup calls below.
-  -- see `:h lsp-quickstart` for more details.
-  "https://github.com/mason-org/mason.nvim",                     -- package manager
-  "https://github.com/mason-org/mason-lspconfig.nvim",           -- lspconfig bridge
-  "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim" -- auto installer
-}, { confirm = false })
-
-require("mason").setup()
-require("mason-lspconfig").setup()
-require("mason-tool-installer").setup({
-  ensure_installed = vim.tbl_keys(lsp_servers),
-})
-
--- configure each lsp server on the table
--- to check what clients are attached to the current buffer, use
--- `:checkhealth vim.lsp`. to view default lsp keybindings, use `:h lsp-defaults`.
-for server, config in pairs(lsp_servers) do
-  vim.lsp.config(server, {
-    settings = config,
-
-    -- only create the keymaps if the server attaches successfully
-    on_attach = function(_, bufnr)
-      vim.keymap.set("n", "grd", vim.lsp.buf.definition,
-        { buffer = bufnr, desc = "vim.lsp.buf.definition()", })
-
-      vim.keymap.set("n", "grf", vim.lsp.buf.format,
-        { buffer = bufnr, desc = "vim.lsp.buf.format()", })
-    end,
-  })
-end
-
--- NOTE: if all you want is lsp + completion + highlighting, you're done.
--- the rest of the lines are just quality-of-life/appearance plugins and
--- can be removed.
-
--- INFO: snacks.nvim - picker (fuzzy finder) + explorer (file tree)
-vim.pack.add({
-  "https://github.com/nvim-tree/nvim-web-devicons", -- icons (nerd font)
-  "https://github.com/folke/snacks.nvim",
-}, { confirm = false })
-
-require("snacks").setup({
-  picker = { enabled = true },
-  explorer = { enabled = true },
-})
-
-local pick = require("snacks").picker
-
-vim.keymap.set("n", "<leader>sp", function() pick.pickers() end,   { desc = "[S]earch Builtin [P]ickers" })
-vim.keymap.set("n", "<leader>sb", function() pick.buffers() end,   { desc = "[S]earch [B]uffers" })
-vim.keymap.set("n", "<leader>sf", function() pick.files() end,     { desc = "[S]earch [F]iles" })
-vim.keymap.set("n", "<leader>sw", function() pick.grep_word() end, { desc = "[S]earch Current [W]ord" })
-vim.keymap.set("n", "<leader>sg", function() pick.grep() end,      { desc = "[S]earch by [G]rep" })
-vim.keymap.set("n", "<leader>sr", function() pick.resume() end,    { desc = "[S]earch [R]esume" })
-vim.keymap.set("n", "<leader>sh", function() pick.help() end,      { desc = "[S]earch [H]elp" })
-vim.keymap.set("n", "<leader>sm", function() pick.man() end,       { desc = "[S]earch [M]anuals" })
-
-vim.keymap.set("n", "<leader>e", function() require("snacks").explorer() end,
-  { desc = "Toggle [E]xplorer" })
-vim.keymap.set("n", "<leader>E", function() require("snacks").explorer({ reveal = true }) end,
-  { desc = "Reveal file in [E]xplorer" })
-
--- INFO: better statusline
-vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" }, { confirm = false })
-
-require("lualine").setup({
-  options = {
-    section_separators = { left = "", right = "", },
-    component_separators = { left = "", right = "", },
-    disabled_filetypes = {
-      statusline = { "snacks_picker_list", "snacks_picker_input", "snacks_layout_box" },
-    },
-  },
-})
-
--- INFO: keybinding helper
-vim.pack.add({ "https://github.com/folke/which-key.nvim" }, { confirm = false })
-
-require("which-key").setup({
-  spec = {
-    { "<leader>s", group = "[S]earch", icon = { icon = "", color = "green", }, },
-  }
-})
-
--- NOTE: there are many more quality-of-life plugins available and others that
--- achieve what these do. these are just our recommendations to start.
-
--- INFO: utility plugins
-vim.pack.add({
-  "https://github.com/windwp/nvim-autopairs",   -- auto pairs
-  "https://github.com/folke/todo-comments.nvim" -- highlight TODO/INFO/WARN comments
-}, { confirm = false })
-
-require("nvim-autopairs").setup()
-require("todo-comments").setup()
-
--- INFO: bufferline
-vim.pack.add({ "https://github.com/akinsho/bufferline.nvim" }, { confirm = false })
-
-require("bufferline").setup({
-  options = {
-    diagnostics = "nvim_lsp",
-    show_buffer_close_icons = false,
-    show_close_icon = false,
-    separator_style = "thin",
-    offsets = {
-      { filetype = "snacks_layout_box", text = "Files", highlight = "Directory", text_align = "left" },
-    },
-  },
-})
-
-vim.keymap.set("n", "<Tab>",   "<cmd>BufferLineCycleNext<CR>", { desc = "Next buffer" })
-vim.keymap.set("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<CR>", { desc = "Prev buffer" })
-vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>",          { desc = "[B]uffer [D]elete" })
-
--- INFO: flash.nvim - enhanced motion/search
-vim.pack.add({ "https://github.com/folke/flash.nvim" }, { confirm = false })
-
-require("flash").setup()
-
-vim.keymap.set({ "n", "x", "o" }, "s", function() require("flash").jump() end,
-  { desc = "Flash" })
-vim.keymap.set({ "n", "x", "o" }, "S", function() require("flash").treesitter() end,
-  { desc = "Flash Treesitter" })
-vim.keymap.set("o", "r", function() require("flash").remote() end,
-  { desc = "Remote Flash" })
-vim.keymap.set({ "o", "x" }, "R", function() require("flash").treesitter_search() end,
-  { desc = "Treesitter Search" })
-vim.keymap.set("c", "<C-s>", function() require("flash").toggle() end,
-  { desc = "Toggle Flash Search" })
-
--- uncomment to enable automatic plugin updates
--- vim.pack.update()
