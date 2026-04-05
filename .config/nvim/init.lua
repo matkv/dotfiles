@@ -229,7 +229,7 @@ vim.keymap.set("n", "<leader>lr", function()
 end, { desc = "[L]SP [R]estart" })
 
 -- Quit
-vim.keymap.set("n", "<leader>qq", "<cmd>qa<CR>", { desc = "[Q]uit all" })
+vim.keymap.set("n", "<leader>qq", "<cmd>qa!<CR>", { desc = "[Q]uit all (without saving)" })
 vim.keymap.set("n", "<leader>qs", "<cmd>wa<CR>", { desc = "[Q]uick [S]ave all" })
 
 -- Packages
