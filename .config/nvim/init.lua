@@ -163,12 +163,12 @@ for server, config in pairs(lsp_servers) do
 				desc = "Open diagnostic float",
 			})
 
-			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {
+			vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end, {
 				buf = bufnr,
 				desc = "Next diagnostic",
 			})
 
-			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {
+			vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end, {
 				buf = bufnr,
 				desc = "Previous diagnostic",
 			})
@@ -229,11 +229,33 @@ vim.pack.add({ "https://github.com/folke/which-key.nvim" }, { confirm = false })
 local wk = require("which-key")
 
 wk.add({
-	{ "<leader>s", group = "[S]earch" },
-	{ "<leader>b", group = "[B]uffer" },
-	{ "<leader>r", group = "[R]ename" },
-	{ "<leader>c", group = "[C]ode" },
+	{ "<leader>s", group = "[S]earch", icon = { icon = "󰍉", color = "blue" } },
+	{ "<leader>b", group = "[B]uffer", icon = { icon = "󰈙", color = "cyan" } },
+	{ "<leader>r", group = "[R]ename", icon = { icon = "󰑕", color = "orange" } },
+	{ "<leader>c", group = "[C]ode",   icon = { icon = "󰅪", color = "green" } },
+	{ "<leader>m", group = "[M]ason",  icon = { icon = "󰏗", color = "purple" } },
+	{ "<leader>l", group = "[L]SP",    icon = { icon = "󰒕", color = "yellow" } },
+	{ "<leader>q", group = "[Q]uit",   icon = { icon = "", color = "red" } },
 })
+
+vim.keymap.set("n", "<leader>mm", "<cmd>Mason<CR>", { desc = "Open [M]ason" })
+vim.keymap.set("n", "<leader>li", function()
+	local clients = vim.lsp.get_clients({ bufnr = 0 })
+	if #clients == 0 then
+		vim.notify("No LSP clients attached to this buffer", vim.log.levels.WARN)
+	else
+		local names = vim.tbl_map(function(c) return c.name end, clients)
+		vim.notify("LSP clients: " .. table.concat(names, ", "), vim.log.levels.INFO)
+	end
+end, { desc = "[L]SP [I]nfo" })
+vim.keymap.set("n", "<leader>lr", function()
+	for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
+		client:stop()
+	end
+	vim.cmd("edit")
+end, { desc = "[L]SP [R]estart" })
+vim.keymap.set("n", "<leader>qq", "<cmd>qa<CR>",  { desc = "[Q]uit all" })
+vim.keymap.set("n", "<leader>qs", "<cmd>wa<CR>",  { desc = "[Q]uick [S]ave all" })
 
 vim.pack.add({
 	"https://github.com/windwp/nvim-autopairs", -- auto pairs
@@ -244,7 +266,6 @@ require("nvim-autopairs").setup()
 require("todo-comments").setup()
 
 vim.pack.add({ "https://github.com/folke/flash.nvim" }, { confirm = false })
-
 require("flash").setup({})
 
 vim.keymap.set({ "n", "x", "o" }, "s", function()
