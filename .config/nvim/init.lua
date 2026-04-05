@@ -1,14 +1,15 @@
-local g = vim.g
+-- Leader keys — must be set before any plugin loads
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
+-- Options
 local o = vim.o
 local opt = vim.opt
-
-g.mapleader = " "
-g.maplocalleader = " "
 
 o.termguicolors = true
 o.number = true
 o.mouse = "a"
-o.showmode = false
+o.showmode = false -- lualine shows the mode already
 o.clipboard = "unnamedplus"
 o.breakindent = true
 o.undofile = true
@@ -18,12 +19,11 @@ o.signcolumn = "yes"
 o.cursorline = true
 o.scrolloff = 5
 o.updatetime = 250
-o.timeoutlen = 300
+o.timeoutlen = 300 -- faster which-key popup
 o.splitright = true
 o.splitbelow = true
 o.list = true
-opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" } -- decide about this
-o.inccommand = "split"
+o.inccommand = "split" -- live preview for :s substitutions
 o.hlsearch = true
 o.wrap = true
 o.tabstop = 2
@@ -31,80 +31,66 @@ o.shiftwidth = 2
 o.expandtab = true
 o.textwidth = 80
 
+opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
+
+-- Diagnostics
 vim.diagnostic.config({
 	signs = {
 		text = {
-			[vim.diagnostic.severity.ERROR] = " ",
-			[vim.diagnostic.severity.WARN] = " ",
-			[vim.diagnostic.severity.INFO] = " ",
-			[vim.diagnostic.severity.HINT] = " ",
+			[vim.diagnostic.severity.ERROR] = " ",
+			[vim.diagnostic.severity.WARN] = " ",
+			[vim.diagnostic.severity.INFO] = " ",
+			[vim.diagnostic.severity.HINT] = " ",
 		},
 	},
-	virtual_text = true, -- show inline diagnostics
+	virtual_text = true,
 })
 
--- clear search highlights with <Esc>
-vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
+-- Core keymaps (no plugins required)
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlights" })
+vim.keymap.set("n", "gh", "^", { desc = "Go to line start" })
+vim.keymap.set("n", "gl", "$", { desc = "Go to line end" })
 
-vim.keymap.set("n", "gh", "^", { desc = "Move to the beginning of the line" })
-vim.keymap.set("n", "gl", "$", { desc = "Move to the end of the line" })
-
+-- Colorscheme
 vim.pack.add({ "https://github.com/sainnhe/gruvbox-material" }, { confirm = false })
 vim.cmd.colorscheme("gruvbox-material")
 
+-- Treesitter — syntax highlighting and code parsing
 vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" }, { confirm = false })
 
 vim.treesitter.language.add("json", { filetype = "jsonc" })
 
 require("nvim-treesitter").setup({
-	ensure_installed = {
-		"lua",
-		"c",
-		"rust",
-		"go",
-	},
-
+	ensure_installed = { "lua", "c", "rust", "go" },
 	auto_install = true,
-
-	highlight = {
-		enable = true,
-	},
+	highlight = { enable = true },
 })
 
+-- Completion (blink.cmp)
 vim.pack.add({ "https://github.com/saghen/blink.cmp" }, { confirm = false })
 
 require("blink.cmp").setup({
 	completion = {
-		documentation = {
-			auto_show = true,
-		},
+		documentation = { auto_show = true },
 	},
-
 	keymap = {
-		-- these are the default blink keymaps
 		["<C-n>"] = { "select_next", "fallback_to_mappings" },
 		["<C-p>"] = { "select_prev", "fallback_to_mappings" },
 		["<C-y>"] = { "select_and_accept", "fallback" },
 		["<C-e>"] = { "cancel", "fallback" },
-
 		["<Tab>"] = { "snippet_forward", "select_next", "fallback" },
 		["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
 		["<CR>"] = { "select_and_accept", "fallback" },
 		["<Esc>"] = { "cancel", "hide_documentation", "fallback" },
-
 		["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-
 		["<C-b>"] = { "scroll_documentation_up", "fallback" },
 		["<C-f>"] = { "scroll_documentation_down", "fallback" },
-
 		["<C-k>"] = { "show_signature", "hide_signature", "fallback" },
 	},
-
-	fuzzy = {
-		implementation = "lua",
-	},
+	fuzzy = { implementation = "lua" },
 })
 
+-- LSP (mason + mason-lspconfig + nvim-lspconfig)
 local lsp_servers = {
 	lua_ls = {
 		Lua = {
@@ -122,72 +108,51 @@ vim.pack.add({
 }, { confirm = false })
 
 require("mason").setup()
-
 require("mason-lspconfig").setup({
 	ensure_installed = vim.tbl_keys(lsp_servers),
 })
 
--- configure each lsp server
+-- attach keymaps and per-server settings when an LSP client connects
 for server, config in pairs(lsp_servers) do
 	vim.lsp.config(server, {
 		settings = config,
-
 		on_attach = function(_, bufnr)
-			vim.keymap.set("n", "grd", vim.lsp.buf.definition, {
-				buf = bufnr,
-				desc = "Go to definition",
-			})
-
-			vim.keymap.set("n", "grf", vim.lsp.buf.format, {
-				buf = bufnr,
-				desc = "Format buffer",
-			})
-
-			vim.keymap.set("n", "grr", vim.lsp.buf.references, {
-				buf = bufnr,
-				desc = "Go to references",
-			})
-
-			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {
-				buf = bufnr,
-				desc = "[R]e[n]ame symbol",
-			})
-
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {
-				buf = bufnr,
-				desc = "[C]ode [A]ction",
-			})
-
-			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {
-				buf = bufnr,
-				desc = "Open diagnostic float",
-			})
-
-			vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end, {
-				buf = bufnr,
-				desc = "Next diagnostic",
-			})
-
-			vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end, {
-				buf = bufnr,
-				desc = "Previous diagnostic",
-			})
+			-- navigation
+			vim.keymap.set("n", "grd", vim.lsp.buf.definition, { buf = bufnr, desc = "Go to definition" })
+			vim.keymap.set("n", "grr", vim.lsp.buf.references, { buf = bufnr, desc = "Go to references" })
+			vim.keymap.set("n", "grf", vim.lsp.buf.format, { buf = bufnr, desc = "Format buffer" })
+			-- actions
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buf = bufnr, desc = "[R]e[n]ame symbol" })
+			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>ca",
+				vim.lsp.buf.code_action,
+				{ buf = bufnr, desc = "[C]ode [A]ction" }
+			)
+			-- diagnostics
+			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { buf = bufnr, desc = "Open diagnostic float" })
+			vim.keymap.set("n", "]d", function()
+				vim.diagnostic.jump({ count = 1 })
+			end, { buf = bufnr, desc = "Next diagnostic" })
+			vim.keymap.set("n", "[d", function()
+				vim.diagnostic.jump({ count = -1 })
+			end, { buf = bufnr, desc = "Previous diagnostic" })
 		end,
 	})
 end
 
--- fuzzy finder
+-- Telescope — fuzzy finder
 vim.pack.add({
-	"https://github.com/nvim-lua/plenary.nvim", -- library dependency
-	"https://github.com/nvim-tree/nvim-web-devicons", -- icons (nerd font)
-	"https://github.com/nvim-telescope/telescope.nvim", -- the fuzzy finder
+	"https://github.com/nvim-lua/plenary.nvim", -- required library
+	"https://github.com/nvim-tree/nvim-web-devicons", -- nerd font icons
+	"https://github.com/nvim-telescope/telescope.nvim",
 }, { confirm = false })
 
 require("telescope").setup({})
 
 local pickers = require("telescope.builtin")
 
-vim.keymap.set("n", "<leader><leader>", pickers.find_files, { desc = "[F]ind [F]iles" })
+vim.keymap.set("n", "<leader><leader>", pickers.find_files, { desc = "Find files" })
 vim.keymap.set("n", "<leader>sg", pickers.live_grep, { desc = "[S]earch by [G]rep" })
 vim.keymap.set("n", "<leader>sb", pickers.buffers, { desc = "[S]earch [B]uffers" })
 vim.keymap.set("n", "<leader>sh", pickers.help_tags, { desc = "[S]earch [H]elp" })
@@ -196,6 +161,7 @@ vim.keymap.set("n", "<leader>sr", pickers.resume, { desc = "[S]earch [R]esume" }
 vim.keymap.set("n", "<leader>sm", pickers.man_pages, { desc = "[S]earch [M]anuals" })
 vim.keymap.set("n", "<leader>sd", pickers.diagnostics, { desc = "[S]earch [D]iagnostics" })
 
+-- UI — lualine (statusline + buffer tabline)
 vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" }, { confirm = false })
 
 require("lualine").setup({
@@ -220,66 +186,83 @@ require("lualine").setup({
 	},
 })
 
-vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" }) -- shift + l, next buffer
-vim.keymap.set("n", "<S-h>", "<cmd>bprev<CR>", { desc = "Prev buffer" }) -- shift + h, previous buffer
-vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Delete buffer" }) -- SPC + bd, close buffer
+vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-h>", "<cmd>bprev<CR>", { desc = "Prev buffer" })
+vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "[B]uffer [D]elete" })
 
+-- Which-key — keybind overview and leader group labels
+-- must come after all keymaps so it can annotate them
 vim.pack.add({ "https://github.com/folke/which-key.nvim" }, { confirm = false })
 
-local wk = require("which-key")
-
-wk.add({
+require("which-key").add({
 	{ "<leader>s", group = "[S]earch", icon = { icon = "󰍉", color = "blue" } },
 	{ "<leader>b", group = "[B]uffer", icon = { icon = "󰈙", color = "cyan" } },
 	{ "<leader>r", group = "[R]ename", icon = { icon = "󰑕", color = "orange" } },
-	{ "<leader>c", group = "[C]ode",   icon = { icon = "󰅪", color = "green" } },
-	{ "<leader>m", group = "[M]ason",  icon = { icon = "󰏗", color = "purple" } },
-	{ "<leader>l", group = "[L]SP",    icon = { icon = "󰒕", color = "yellow" } },
-	{ "<leader>q", group = "[Q]uit",   icon = { icon = "", color = "red" } },
+	{ "<leader>c", group = "[C]ode", icon = { icon = "󰅪", color = "green" } },
+	{ "<leader>m", group = "[M]ason", icon = { icon = "󰏗", color = "purple" } },
+	{ "<leader>l", group = "[L]SP", icon = { icon = "󰒕", color = "yellow" } },
+	{ "<leader>q", group = "[Q]uit", icon = { icon = "", color = "red" } },
+	{ "<leader>p", group = "[P]ackages", icon = { icon = "󰏖", color = "blue" } },
 })
 
+-- Mason
 vim.keymap.set("n", "<leader>mm", "<cmd>Mason<CR>", { desc = "Open [M]ason" })
+
+-- LSP utilities
 vim.keymap.set("n", "<leader>li", function()
 	local clients = vim.lsp.get_clients({ bufnr = 0 })
 	if #clients == 0 then
 		vim.notify("No LSP clients attached to this buffer", vim.log.levels.WARN)
 	else
-		local names = vim.tbl_map(function(c) return c.name end, clients)
+		local names = vim.tbl_map(function(c)
+			return c.name
+		end, clients)
 		vim.notify("LSP clients: " .. table.concat(names, ", "), vim.log.levels.INFO)
 	end
 end, { desc = "[L]SP [I]nfo" })
+
 vim.keymap.set("n", "<leader>lr", function()
 	for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
 		client:stop()
 	end
 	vim.cmd("edit")
 end, { desc = "[L]SP [R]estart" })
-vim.keymap.set("n", "<leader>qq", "<cmd>qa<CR>",  { desc = "[Q]uit all" })
-vim.keymap.set("n", "<leader>qs", "<cmd>wa<CR>",  { desc = "[Q]uick [S]ave all" })
 
-vim.pack.add({
-	"https://github.com/windwp/nvim-autopairs", -- auto pairs
-	"https://github.com/folke/todo-comments.nvim", -- highlight TODO/INFO/WARN comments
-}, { confirm = false })
+-- Quit
+vim.keymap.set("n", "<leader>qq", "<cmd>qa<CR>", { desc = "[Q]uit all" })
+vim.keymap.set("n", "<leader>qs", "<cmd>wa<CR>", { desc = "[Q]uick [S]ave all" })
 
+-- Packages
+vim.keymap.set("n", "<leader>pu", function()
+	vim.pack.update()
+end, { desc = "[P]ackages [U]pdate" })
+
+-- Utilities
+
+-- auto-close brackets and quotes
+vim.pack.add({ "https://github.com/windwp/nvim-autopairs" }, { confirm = false })
 require("nvim-autopairs").setup()
+
+-- highlight TODO / FIXME / WARN / NOTE / HACK / PERF comments
+vim.pack.add({ "https://github.com/folke/todo-comments.nvim" }, { confirm = false })
 require("todo-comments").setup()
 
+-- flash — fast motion and jump to any location
 vim.pack.add({ "https://github.com/folke/flash.nvim" }, { confirm = false })
 require("flash").setup({})
 
 vim.keymap.set({ "n", "x", "o" }, "s", function()
 	require("flash").jump()
-end, { desc = "Flash" })
+end, { desc = "Flash jump" })
 vim.keymap.set({ "n", "x", "o" }, "S", function()
 	require("flash").treesitter()
-end, { desc = "Flash Treesitter" })
+end, { desc = "Flash treesitter" })
 vim.keymap.set("o", "r", function()
 	require("flash").remote()
-end, { desc = "Remote Flash" })
+end, { desc = "Flash remote" })
 vim.keymap.set({ "o", "x" }, "R", function()
 	require("flash").treesitter_search()
-end, { desc = "Treesitter Search" })
+end, { desc = "Flash treesitter search" })
 vim.keymap.set("c", "<C-s>", function()
 	require("flash").toggle()
-end, { desc = "Toggle Flash Search" })
+end, { desc = "Toggle flash search" })
