@@ -133,14 +133,44 @@ for server, config in pairs(lsp_servers) do
 		settings = config,
 
 		on_attach = function(_, bufnr)
-			vim.keymap.set("n", "grd", vim.lsp.buf.definition, { -- think about which keybind would be nice here
-				buffer = bufnr,
+			vim.keymap.set("n", "grd", vim.lsp.buf.definition, {
+				buf = bufnr,
 				desc = "Go to definition",
 			})
 
-			vim.keymap.set("n", "grf", vim.lsp.buf.format, { -- think about which keybind would be nice here
-				buffer = bufnr,
+			vim.keymap.set("n", "grf", vim.lsp.buf.format, {
+				buf = bufnr,
 				desc = "Format buffer",
+			})
+
+			vim.keymap.set("n", "grr", vim.lsp.buf.references, {
+				buf = bufnr,
+				desc = "Go to references",
+			})
+
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {
+				buf = bufnr,
+				desc = "[R]e[n]ame symbol",
+			})
+
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {
+				buf = bufnr,
+				desc = "[C]ode [A]ction",
+			})
+
+			vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, {
+				buf = bufnr,
+				desc = "Open diagnostic float",
+			})
+
+			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {
+				buf = bufnr,
+				desc = "Next diagnostic",
+			})
+
+			vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {
+				buf = bufnr,
+				desc = "Previous diagnostic",
 			})
 		end,
 	})
@@ -157,9 +187,14 @@ require("telescope").setup({})
 
 local pickers = require("telescope.builtin")
 
-vim.keymap.set("n", "<leader><leader>", pickers.find_files, { desc = "Find files TEST MATKO" })
--- TODO add remaining ones from the example
--- like searching the neovim help from a fuzzy picker and so on
+vim.keymap.set("n", "<leader><leader>", pickers.find_files, { desc = "[F]ind [F]iles" })
+vim.keymap.set("n", "<leader>sg", pickers.live_grep, { desc = "[S]earch by [G]rep" })
+vim.keymap.set("n", "<leader>sb", pickers.buffers, { desc = "[S]earch [B]uffers" })
+vim.keymap.set("n", "<leader>sh", pickers.help_tags, { desc = "[S]earch [H]elp" })
+vim.keymap.set("n", "<leader>sw", pickers.grep_string, { desc = "[S]earch current [W]ord" })
+vim.keymap.set("n", "<leader>sr", pickers.resume, { desc = "[S]earch [R]esume" })
+vim.keymap.set("n", "<leader>sm", pickers.man_pages, { desc = "[S]earch [M]anuals" })
+vim.keymap.set("n", "<leader>sd", pickers.diagnostics, { desc = "[S]earch [D]iagnostics" })
 
 vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" }, { confirm = false })
 
@@ -193,25 +228,12 @@ vim.pack.add({ "https://github.com/folke/which-key.nvim" }, { confirm = false })
 
 local wk = require("which-key")
 
--- wk.add({
---   { "<leader>d", group = "Diagnostics" },
---   { "<leader>e", group = "Explorer" },
---   { "<leader>f", group = "Find" },
---   { "<leader>l", group = "Lazy panels" },
---   { "<leader>m", group = "Mason" },
---   { "<leader>n", group = "NoHighlight" },
---   { "<leader>p", group = "File Explorer" },
---   { "<leader>s", group = "Splits" },
---   { "<leader>t", group = "Tabs" },
---   { "<leader>w", group = "Workspace" },
---   { "<leader>x", group = "Trouble" },
--- })
---
--- require("which-key").setup({
---   spec = {
---     { "<leader>s", group = "[S]earch", icon = { icon = "", color = "green", }, },
---   }
--- })
+wk.add({
+	{ "<leader>s", group = "[S]earch" },
+	{ "<leader>b", group = "[B]uffer" },
+	{ "<leader>r", group = "[R]ename" },
+	{ "<leader>c", group = "[C]ode" },
+})
 
 vim.pack.add({
 	"https://github.com/windwp/nvim-autopairs", -- auto pairs
@@ -240,5 +262,3 @@ end, { desc = "Treesitter Search" })
 vim.keymap.set("c", "<C-s>", function()
 	require("flash").toggle()
 end, { desc = "Toggle Flash Search" })
-
--- TODO maybe add trouble.nvim
