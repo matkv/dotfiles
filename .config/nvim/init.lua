@@ -203,6 +203,7 @@ require("which-key").add({
 	{ "<leader>l", group = "[L]SP", icon = { icon = "󰒕", color = "yellow" } },
 	{ "<leader>q", group = "[Q]uit", icon = { icon = "", color = "red" } },
 	{ "<leader>p", group = "[P]ackages", icon = { icon = "󰏖", color = "blue" } },
+	{ "<leader>u", group = "[U]ser interface", icon = { icon = "󰕮", color = "cyan" } },
 })
 
 -- Mason
@@ -266,3 +267,14 @@ end, { desc = "Flash treesitter search" })
 vim.keymap.set("c", "<C-s>", function()
 	require("flash").toggle()
 end, { desc = "Toggle flash search" })
+
+-- User Interface
+vim.keymap.set("n", "<leader>uw", function()
+	vim.o.wrap = not vim.o.wrap
+	vim.notify("Word wrap " .. (vim.o.wrap and "enabled" or "disabled"))
+end, { desc = "[U]I toggle [W]ord wrap" })
+
+vim.keymap.set("n", "<leader>ul", function()
+	vim.o.number = not vim.o.number
+	vim.notify("Line numbers " .. (vim.o.number and "enabled" or "disabled"))
+end, { desc = "[U]I toggle [L]ine numbers" })
