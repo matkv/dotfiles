@@ -66,7 +66,7 @@ vim.treesitter.language.add("json", { filetype = "jsonc" })
 require("nvim-treesitter").setup({
 	ensure_installed = { "lua", "c", "rust", "go" },
 	auto_install = true,
-	highlight = { enable = true },
+	highlight = { enable = not vim.g.vscode },
 })
 
 -- Completion (blink.cmp)
