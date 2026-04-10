@@ -23,24 +23,22 @@
     "[Gruvbox Dark Medium]": {
       "editorInlayHint.background": "#282828",
       "editorInlayHint.typeForeground": "#aaa5aaf0",
-      "editorInlayHint.parameterForeground": "#fdb6fdf0"
-    }
+      "editorInlayHint.parameterForeground": "#fdb6fdf0",
+    },
   },
   "lldb.suppressUpdateNotifications": true,
   "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
+    "asvetliakov.vscode-neovim": 1,
   },
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "keyboard.dispatch": "keyCode",
   "editor.stickyScroll.enabled": true,
   "excalidraw.theme": "dark",
-  "security.allowedUNCHosts": [
-    "wsl.localhost"
-  ],
+  "security.allowedUNCHosts": ["wsl.localhost"],
   "explorer.confirmDragAndDrop": false,
   "launch": {
     "configurations": [],
-    "compounds": []
+    "compounds": [],
   },
   "go.toolsManagement.autoUpdate": true,
   "github.copilot.enable": {
@@ -49,10 +47,10 @@
     "markdown": true,
     "scminput": false,
     "csharp": true,
-    "go": true
+    "go": true,
   },
   "json.schemas": [],
-  "vscode-neovim.useWSL": true,
+  "vscode-neovim.useWSL": false,
   "vscode-neovim.compositeKeys": {},
   "remote.autoForwardPortsSource": "hybrid",
   "json.format.enable": false,
@@ -64,7 +62,7 @@
   "terminal.integrated.minimumContrastRatio": 1,
   "window.titleBarStyle": "custom",
   "gopls": {
-    "ui.semanticTokens": true
+    "ui.semanticTokens": true,
   },
   "gruvboxMaterial.darkContrast": "hard",
   "gruvboxMaterial.darkWorkbench": "flat",
@@ -79,7 +77,6 @@
   "inlineChat.enableV2": true,
   "terminal.integrated.suggest.enabled": true,
   "go.diagnostic.vulncheck": "Imports",
-  "github.copilot.nextEditSuggestions.enabled": true,
   "chat.viewSessions.orientation": "stacked",
   "editor.rulers": [{ "column": 100, "color": "#d3d3d305" }],
 }
