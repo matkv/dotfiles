@@ -54,9 +54,9 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highl
 vim.keymap.set("n", "gh", "^", { desc = "Go to line start" })
 vim.keymap.set("n", "gl", "$", { desc = "Go to line end" })
 
--- Colorscheme
-vim.pack.add({ "https://github.com/sainnhe/gruvbox-material" }, { confirm = false })
-vim.cmd.colorscheme("gruvbox-material")
+vim.pack.add({ { src = "https://github.com/ember-theme/nvim", name = "ember" } }, { confirm = false })
+require("ember").setup({variant = "ember" })
+vim.cmd.colorscheme("ember")
 
 -- Treesitter — syntax highlighting and code parsing
 vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" }, { confirm = false })
