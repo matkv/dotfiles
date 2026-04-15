@@ -1,4 +1,10 @@
+device: desktop
 paths:
-    obsidianvault: /home/matko/documents/Obsidian Vault/
-    website: /home/matko/dev/matkv.dev/
-device: laptop
+  obsidianvault: C:\Users\matko\documents\Obsidian Vault
+  website: C:\Users\matko\documents\Code\matkv.dev
+  dotfiles:
+    repo: C:\Users\matko\Documents\Code\dotfiles
+    apps:
+      neovim:
+        source: .config\nvim
+        target: C:\Users\matko\AppData\Local\nvim
