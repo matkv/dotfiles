@@ -26,6 +26,7 @@ o.list = true
 o.inccommand = "split" -- live preview for :s substitutions
 o.hlsearch = true
 o.wrap = true
+o.linebreak = true
 o.tabstop = 2
 o.shiftwidth = 2
 o.expandtab = true
@@ -275,7 +276,9 @@ end, { desc = "Toggle flash search" })
 vim.keymap.set("n", "<leader>uw", function()
 	vim.o.wrap = not vim.o.wrap
 	vim.notify("Word wrap " .. (vim.o.wrap and "enabled" or "disabled"))
-end, { desc = "[U]I toggle [W]ord wrap" })
+  vim.o.linebreak = not vim.o.linebreak
+  vim.notify("Line break " .. (vim.o.linebreak and "enabled" or "disabled"))
+end, { desc = "[U]I toggle [W]ord wrap & line break" })
 
 vim.keymap.set("n", "<leader>ul", function()
 	vim.o.number = not vim.o.number
