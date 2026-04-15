@@ -1,4 +1,3 @@
--- test change for core app
 -- Leader keys — must be set before any plugin loads
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
