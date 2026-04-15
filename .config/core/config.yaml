@@ -6,5 +6,10 @@ paths:
     repo: C:\Users\matko\Documents\Code\dotfiles
     apps:
       neovim:
-        source: .config\nvim
+        sources:
+          - .config\nvim\init.lua
         target: C:\Users\matko\AppData\Local\nvim
+      core:
+        sources:
+          - .config\core\config.yaml
+        target: C:\Users\matko\AppData\Roaming\core
