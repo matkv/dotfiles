@@ -78,5 +78,18 @@
   "terminal.integrated.suggest.enabled": true,
   "go.diagnostic.vulncheck": "Imports",
   "chat.viewSessions.orientation": "stacked",
-  "editor.rulers": [{ "column": 100, "color": "#d3d3d305" }],
+  "editor.rulers": [
+    {
+      "column": 100,
+      "color": "#d3d3d305"
+    }
+  ],
+  "chat.tools.urls.autoApprove": {
+    "https://code.visualstudio.com": true,
+    "https://github.com/microsoft/vscode/wiki/*": true,
+    "https://github.com": {
+      "approveRequest": false,
+      "approveResponse": true
+    }
+  },
 }
