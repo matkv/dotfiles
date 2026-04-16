@@ -103,6 +103,7 @@ local lsp_servers = {
 			},
 		},
 	},
+	yamlls = {},
 }
 
 vim.pack.add({
