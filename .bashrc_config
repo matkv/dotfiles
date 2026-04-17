@@ -38,7 +38,7 @@ alias obsync="cd ~/obsidian/ &&ob sync --continuous"
 
 # ChatGPT magic to print my bash aliases
 
-commands() {
+aliases() {
     echo
 
     tmp_output=$(mktemp)
