@@ -206,9 +206,9 @@ require("which-key").add({
 	{ "<leader>c", group = "[C]ode", icon = { icon = "󰅪", color = "green" } },
 	{ "<leader>m", group = "[M]ason", icon = { icon = "󰏗", color = "purple" } },
 	{ "<leader>l", group = "[L]SP", icon = { icon = "󰒕", color = "yellow" } },
-	{ "<leader>q", group = "[Q]uit", icon = { icon = "", color = "red" } },
-	{ "<leader>p", group = "[P]ackages", icon = { icon = "󰏖", color = "blue" } },
+	{ "<leader>q", group = "[Q]uit", icon = { icon = "󰗼", color = "red" } },
 	{ "<leader>u", group = "[U]ser interface", icon = { icon = "󰕮", color = "cyan" } },
+	{ "<leader>n", group = "[N]eovim", icon = { icon = "󰒓", color = "green" } },
 })
 
 -- Mason
@@ -238,10 +238,6 @@ end, { desc = "[L]SP [R]estart" })
 vim.keymap.set("n", "<leader>qq", "<cmd>qa!<CR>", { desc = "[Q]uit all (without saving)" })
 vim.keymap.set("n", "<leader>qs", "<cmd>wa<CR>", { desc = "[Q]uick [S]ave all" })
 
--- Packages
-vim.keymap.set("n", "<leader>pu", function()
-	vim.pack.update()
-end, { desc = "[P]ackages [U]pdate" })
 
 -- Utilities
 
@@ -280,6 +276,12 @@ vim.keymap.set("n", "<leader>uw", function()
   vim.o.linebreak = not vim.o.linebreak
   vim.notify("Line break " .. (vim.o.linebreak and "enabled" or "disabled"))
 end, { desc = "[U]I toggle [W]ord wrap & line break" })
+
+-- Neovim config
+vim.keymap.set("n", "<leader>nc", "<cmd>edit $MYVIMRC<CR>", { desc = "[N]eovim [C]onfig" })
+vim.keymap.set("n", "<leader>nu", function()
+	vim.pack.update()
+end, { desc = "[N]eovim [U]pdate packages" })
 
 vim.keymap.set("n", "<leader>ul", function()
 	vim.o.number = not vim.o.number
