@@ -13,3 +13,8 @@ paths:
         sources:
           - .config\core\config.yaml
         target: C:\Users\matko\AppData\Roaming\core
+      vscode:
+        sources:
+          - .config\Code\User\settings.json
+          - .config\Code\User\keybindings.json
+        target: C:\Users\matko\AppData\Roaming\Code\User
