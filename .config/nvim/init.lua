@@ -255,7 +255,6 @@ vim.keymap.set("n", "<leader>qq", "<cmd>qa!<CR>", { desc = "[Q]uit all (without 
 vim.keymap.set("n", "<leader>qs", "<cmd>wa<CR>", { desc = "[Q]uick [S]ave all" })
 
 -- Utilities
-
 -- auto-close brackets and quotes
 vim.pack.add({ "https://github.com/windwp/nvim-autopairs" }, { confirm = false })
 require("nvim-autopairs").setup()
@@ -288,13 +287,13 @@ vim.keymap.set("n", "<leader>uw", function()
   vim.notify("Line break " .. (vim.o.linebreak and "enabled" or "disabled"))
 end, { desc = "[U]I toggle [W]ord wrap & line break" })
 
+vim.keymap.set("n", "<leader>ul", function()
+  vim.o.number = not vim.o.number
+  vim.notify("Line numbers " .. (vim.o.number and "enabled" or "disabled"))
+end, { desc = "[U]I toggle [L]ine numbers" })
+
 -- Neovim config
 vim.keymap.set("n", "<leader>nc", "<cmd>edit $MYVIMRC<CR>", { desc = "[N]eovim [C]onfig" })
 vim.keymap.set("n", "<leader>nu", function()
   vim.pack.update()
 end, { desc = "[N]eovim [U]pdate packages" })
-
-vim.keymap.set("n", "<leader>ul", function()
-  vim.o.number = not vim.o.number
-  vim.notify("Line numbers " .. (vim.o.number and "enabled" or "disabled"))
-end, { desc = "[U]I toggle [L]ine numbers" })
