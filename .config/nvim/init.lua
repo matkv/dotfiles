@@ -248,7 +248,6 @@ if vim.g.vscode then
   vim.keymap.set("n", "<S-l>", function() vscode.call("workbench.action.nextEditor") end)
   vim.keymap.set("n", "<leader><leader>", function() vscode.call("workbench.action.quickOpen") end)
   vim.keymap.set("n", "/", function() vscode.action("actions.find") end)
-  vim.keymap.set("n", "<leader>/", function() vscode.action("workbench.action.findInFiles") end)
 end
 
 -- Quit
