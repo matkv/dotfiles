@@ -55,6 +55,10 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highl
 vim.keymap.set("n", "gh", "^", { desc = "Go to line start" })
 vim.keymap.set("n", "gl", "$", { desc = "Go to line end" })
 
+vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<S-h>", "<cmd>bprev<CR>", { desc = "Prev buffer" })
+vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "[B]uffer [D]elete" })
+
 vim.pack.add({ { src = "https://github.com/ember-theme/nvim", name = "ember" } }, { confirm = false })
 require("ember").setup({ variant = "ember" })
 vim.cmd.colorscheme("ember")
@@ -192,9 +196,6 @@ if not vim.g.vscode then
     },
   })
 
-  vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
-  vim.keymap.set("n", "<S-h>", "<cmd>bprev<CR>", { desc = "Prev buffer" })
-  vim.keymap.set("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "[B]uffer [D]elete" })
 
   -- Which-key — keybind overview and leader group labels
   -- must come after all keymaps so it can annotate them
@@ -238,12 +239,21 @@ if not vim.g.vscode then
   -- highlight TODO / FIXME / WARN / NOTE / HACK / PERF comments
   vim.pack.add({ "https://github.com/folke/todo-comments.nvim" }, { confirm = false })
   require("todo-comments").setup()
+
 end -- vim.g.vscode guard
+
+if vim.g.vscode then
+  local vscode = require("vscode")
+  vim.keymap.set("n", "<S-h>", function() vscode.call("workbench.action.previousEditor") end)
+  vim.keymap.set("n", "<S-l>", function() vscode.call("workbench.action.nextEditor") end)
+  vim.keymap.set("n", "<leader><leader>", function() vscode.call("workbench.action.quickOpen") end)
+  vim.keymap.set("n", "/", function() vscode.action("actions.find") end)
+  vim.keymap.set("n", "<leader>/", function() vscode.action("workbench.action.findInFiles") end)
+end
 
 -- Quit
 vim.keymap.set("n", "<leader>qq", "<cmd>qa!<CR>", { desc = "[Q]uit all (without saving)" })
 vim.keymap.set("n", "<leader>qs", "<cmd>wa<CR>", { desc = "[Q]uick [S]ave all" })
-
 
 -- Utilities
 
