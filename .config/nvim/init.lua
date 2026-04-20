@@ -179,6 +179,16 @@ if not vim.g.vscode then
       section_separators = { left = "", right = "" },
       component_separators = { left = "", right = "" },
     },
+    sections = {
+      lualine_a = { { "mode",        color = "Keyword"  } },
+      lualine_b = { { "branch",      color = "Function" },
+                    { "diff",        color = "Function" },
+                    { "diagnostics", color = "Function" } },
+      lualine_c = { "filename" },
+      lualine_x = { "encoding", "fileformat", "filetype" },
+      lualine_y = { { "progress", color = "Function" } },
+      lualine_z = { { "location", color = "Keyword"  } },
+    },
     tabline = {
       lualine_a = {
         {
@@ -190,6 +200,10 @@ if not vim.g.vscode then
             modified = " ●",
             alternate_file = "",
             directory = "",
+          },
+          buffers_color = {
+            active   = "Keyword",
+            inactive = "Normal",
           },
         },
       },
