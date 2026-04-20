@@ -22,3 +22,7 @@ paths:
         sources:
           - .wezterm.lua
         target: C:\Users\matko\
+      powershell:
+        sources:
+          - .powershell\Microsoft.PowerShell_profile.ps1
+        target: C:\Users\matko\Documents\PowerShell\
