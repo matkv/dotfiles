@@ -18,3 +18,7 @@ paths:
           - .config\Code\User\settings.json
           - .config\Code\User\keybindings.json
         target: C:\Users\matko\AppData\Roaming\Code\User
+      wezterm:
+        sources:
+          - .wezterm.lua
+        target: C:\Users\matko\
