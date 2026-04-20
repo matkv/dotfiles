@@ -266,7 +266,7 @@ end
 
 -- Quit
 vim.keymap.set("n", "<leader>qq", "<cmd>qa!<CR>", { desc = "[Q]uit all (without saving)" })
-vim.keymap.set("n", "<leader>qs", "<cmd>wa<CR>", { desc = "[Q]uick [S]ave all" })
+vim.keymap.set("n", "<leader>qw", "<cmd>wqa<CR>", { desc = "[Q]uit all ([W]rite/save all first)" })
 
 -- Utilities
 -- auto-close brackets and quotes
