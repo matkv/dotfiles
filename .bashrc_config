@@ -11,6 +11,7 @@ export PATH=$PATH:~/.go/bin/
 export PATH=$PATH:~/.cargo/bin/
 export PATH=$PATH:~/dev/tidysync/target/release/
 export PATH=$PATH:~/.local/bin/
+export PATH=$PATH:~/.dotnet/tools/
 
 alias ll="ls -l"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
@@ -26,6 +27,7 @@ alias update="sudo pacman -Syu"
 alias ff="fastfetch"
 # alias updateutils="go install github.com/matkv/utils@latest"
 alias z="zellij"
+alias zl="zellij -l welcome" # open zellij with welcome screen + picker
 alias ds="dotfiles status -s"
 # alias start-tailscale="sudo tailscaled"
 # alias tailscalehugo="hugo serve --bind=0.0.0.0 --port=1313"
