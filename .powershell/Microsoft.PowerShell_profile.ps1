@@ -1,4 +1,5 @@
 $env:POWERSHELL_UPDATECHECK = 'Off'
+$env:ENABLE_LSP_TOOL = "1"
 
 fastfetch
 
