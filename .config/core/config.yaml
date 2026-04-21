@@ -26,3 +26,7 @@ paths:
         sources:
           - .powershell\Microsoft.PowerShell_profile.ps1
         target: C:\Users\matko\Documents\PowerShell\
+      claude:
+        sources:
+          - .claude\settings.json
+        target: C:\Users\matko\.claude
