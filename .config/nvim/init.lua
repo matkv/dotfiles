@@ -168,6 +168,7 @@ if not vim.g.vscode then
   vim.keymap.set("n", "<leader>sh", pickers.help_tags, { desc = "[S]earch [H]elp" })
   vim.keymap.set("n", "<leader>sw", pickers.grep_string, { desc = "[S]earch current [W]ord" })
   vim.keymap.set("n", "<leader>sr", pickers.resume, { desc = "[S]earch [R]esume" })
+  vim.keymap.set("n", "<leader>s.", function() pickers.find_files({ hidden = true, cwd = vim.fn.expand("%:p:h") }) end, { desc = "[S]earch hidden" })
   vim.keymap.set("n", "<leader>sm", pickers.man_pages, { desc = "[S]earch [M]anuals" })
   vim.keymap.set("n", "<leader>sd", pickers.diagnostics, { desc = "[S]earch [D]iagnostics" })
 
