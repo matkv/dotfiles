@@ -12,5 +12,6 @@
     "enabled": false,
     "mode": "hold"
   },
-  "voiceEnabled": false
+  "voiceEnabled": false,
+  "editorMode": "vim"
 }
