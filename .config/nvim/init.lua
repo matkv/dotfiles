@@ -76,7 +76,10 @@ require("nvim-treesitter").setup({
 
 if not vim.g.vscode then
   -- Completion (blink.cmp)
-  vim.pack.add({ "https://github.com/saghen/blink.cmp" }, { confirm = false })
+  vim.pack.add({
+    "https://github.com/saghen/blink.lib",
+    "https://github.com/saghen/blink.cmp" 
+  }, { confirm = false })
 
   require("blink.cmp").setup({
     completion = {
