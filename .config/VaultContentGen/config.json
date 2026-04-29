@@ -1,0 +1,12 @@
+{
+  "VaultSourcePath": "/home/matko/documents/Obsidian Vault/Notes/matkv.dev/",
+  "HugoContentPath": "/home/matko/dev/matkv.dev/content/",
+  "BookSourcePath": "/home/matko/documents/Obsidian Vault/Database/Index/Books",
+  "IgnoredFolders": ["TEMPCLEANUP"],
+  "SectionTypes": {
+    "Log": "Log",
+    "Garden": "Standard",
+    "Projects": "Project",
+    "Library": "Book"
+  }
+}

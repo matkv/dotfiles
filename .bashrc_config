@@ -12,6 +12,7 @@ export PATH=$PATH:~/.cargo/bin/
 export PATH=$PATH:~/dev/tidysync/target/release/
 export PATH=$PATH:~/.local/bin/
 export PATH=$PATH:~/.dotnet/tools/
+export PATH=$PATH:~/dev/VaultContentGen/src/VaultContentGen/bin/Release/net10.0/
 
 alias ll="ls -l"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
