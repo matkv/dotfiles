@@ -258,6 +258,10 @@ if not vim.g.vscode then
   vim.pack.add({ "https://github.com/folke/todo-comments.nvim" }, { confirm = false })
   require("todo-comments").setup()
 
+  -- Zen mode
+  vim.pack.add({ "https://github.com/folke/zen-mode.nvim" }, { confirm = false })
+  require("zen-mode").setup({})
+
 end -- vim.g.vscode guard
 
 if vim.g.vscode then
@@ -309,6 +313,12 @@ vim.keymap.set("n", "<leader>ul", function()
   vim.o.number = not vim.o.number
   vim.notify("Line numbers " .. (vim.o.number and "enabled" or "disabled"))
 end, { desc = "[U]I toggle [L]ine numbers" })
+
+if not vim.g.vscode then
+  vim.keymap.set("n", "<leader>uz", function()
+    require("zen-mode").toggle()
+  end, { desc = "[U]I toggle [Z]en mode" })
+end
 
 -- Neovim config
 vim.keymap.set("n", "<leader>nc", "<cmd>edit $MYVIMRC<CR>", { desc = "[N]eovim [C]onfig" })
