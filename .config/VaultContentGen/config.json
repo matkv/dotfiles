@@ -5,6 +5,7 @@
   "IgnoredFolders": ["TEMPCLEANUP"],
   "SectionTypes": {
     "Log": "Log",
+    "Garden": "Garden",
     "Garden": "Standard",
     "Projects": "Project",
     "Library": "Book"
