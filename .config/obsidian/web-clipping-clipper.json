@@ -23,6 +23,11 @@
 			"name": "date",
 			"value": "{{time}}",
 			"type": "text"
+		},
+		{
+			"name": "index",
+			"value": "[[Web Clippings]]",
+			"type": "text"
 		}
 	],
 	"triggers": [],
