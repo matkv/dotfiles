@@ -1,5 +1,5 @@
 {
-  "version": "2.0.126.1",
+  "version": "2.0.133.1",
   "settings": {
     "blur": 0,
     "brightness": 100,
@@ -13,7 +13,7 @@
     "backgroundcolor": "#000000",
     "backgroundopacity": 90,
     "blackbars": false,
-    "blockautoplay": true,
+    "blockautoplay": false,
     "blockhfrformats": false,
     "blockwebmformats": false,
     "boostvolume": false,
@@ -26,14 +26,9 @@
       "position": "absolute"
     },
     "controls": [
-      "reverse-playlist",
-      "volume-booster",
       "cinema-mode",
       "size",
-      "pop-up-player",
-      "speed",
-      "screenshot",
-      "options"
+      "screenshot"
     ],
     "controlsvisible": true,
     "controlspeed": true,
@@ -60,24 +55,46 @@
     "executescript": false,
     "expanddescription": false,
     "filter": "none",
+    "griditemsperrow": {
+      "channel": {
+        "shorts": {
+          "apply": false,
+          "count": 5
+        },
+        "videos": {
+          "apply": true,
+          "count": 5
+        }
+      },
+      "posts": {
+        "apply": false,
+        "count": 4
+      },
+      "shorts": {
+        "apply": false,
+        "count": 8
+      },
+      "videos": {
+        "apply": true,
+        "count": 5
+      }
+    },
     "hidecardsendscreens": false,
     "hidechat": false,
     "hidecomments": false,
     "hiderelated": false,
-    "hideshorts": false,
+    "hideshorts": true,
     "ignoreplaylists": true,
     "ignorepopupplayer": true,
     "localecode": "en_US",
     "localedir": "ltr",
-    "message": false,
-    "miniplayer": true,
+    "miniplayer": false,
     "miniplayerposition": "_top-left",
     "miniplayersize": "_560x315",
     "newestcomments": false,
     "overridespeeds": true,
     "pauseforegroundtab": false,
-    "pausevideos": true,
-    "popuplayersize": "640x360",
+    "pausevideos": false,
     "qualityembeds": "medium",
     "qualityembedsfullscreen": "hd1080",
     "qualityplaylists": "hd720",
@@ -90,15 +107,16 @@
     "selectqualityfullscreenoff": false,
     "selectqualityfullscreenon": false,
     "speed": 1,
-    "speedvariation": 0.1,
+    "speedvariation": 0.02,
     "stopvideos": false,
     "theatermode": false,
     "theme": "default-dark",
-    "themevariant": "youtube-deep-dark.css",
+    "themevariant": "youtube-deep-dark-youtube-dark.css",
     "update": 1728740312552,
     "volume": 50,
-    "volumemultiplier": 3,
+    "volumemultiplier": 2,
     "volumevariation": 5,
+    "whatsnew": false,
     "wideplayer": false,
     "wideplayerviewport": false
   }
