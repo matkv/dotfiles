@@ -69,7 +69,7 @@ vim.pack.add({ "https://github.com/nvim-treesitter/nvim-treesitter" }, { confirm
 vim.treesitter.language.add("json", { filetype = "jsonc" })
 
 require("nvim-treesitter").setup({
-  ensure_installed = { "lua", "c", "rust", "go" },
+  ensure_installed = { "lua", "c", "rust", "go", "markdown", "markdown_inline" },
   auto_install = true,
   highlight = { enable = not vim.g.vscode },
 })
@@ -229,6 +229,7 @@ if not vim.g.vscode then
     { "<leader>q", group = "[Q]uit", icon = { icon = "󰗼", color = "red" } },
     { "<leader>u", group = "[U]ser interface", icon = { icon = "󰕮", color = "cyan" } },
     { "<leader>n", group = "[N]eovim", icon = { icon = "󰒓", color = "green" } },
+    { "<leader>o", group = "[O]bsidian", icon = { icon = "󰧮", color = "purple" } },
   })
 
   -- Mason
@@ -261,6 +262,71 @@ if not vim.g.vscode then
   -- Zen mode
   vim.pack.add({ "https://github.com/folke/zen-mode.nvim" }, { confirm = false })
   require("zen-mode").setup({})
+
+  -- Obsidian — edit the Obsidian vault from Neovim
+  vim.pack.add({ "https://github.com/obsidian-nvim/obsidian.nvim" }, { confirm = false })
+
+  -- built-in UI conceals links/checkboxes/refs only when conceallevel is set
+  vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function() vim.opt_local.conceallevel = 2 end,
+  })
+
+  require("obsidian").setup({
+    legacy_commands = false, -- use the single :Obsidian command
+    workspaces = {
+      { name = "personal", path = "/home/matko/documents/Obsidian Vault" },
+    },
+
+    -- new notes -> Notes/, filename = the title as typed (human-readable)
+    new_notes_location = "notes_subdir",
+    notes_subdir = "Notes",
+    note_id_func = function(title)
+      if title ~= nil and title ~= "" then
+        return title
+      end
+      return tostring(os.time())
+    end,
+
+    -- protect existing notes: never auto-write id/aliases/tags frontmatter
+    frontmatter = { enabled = false },
+
+    -- match the vault: [[Title]] wikilinks
+    link = { style = "wiki" },
+
+    daily_notes = {
+      folder = "Database/Index/Journal",
+      date_format = "%Y-%m-%d",
+      template = "Journal Template.md",
+      workdays_only = false,
+    },
+    templates = {
+      folder = "Obsidian/Templates",
+      date_format = "%Y-%m-%d",
+      time_format = "%H:%M",
+    },
+
+    -- completion is served by the built-in obsidian-ls LSP (blink picks it up)
+    picker = {
+      name = "telescope.nvim",
+    },
+    ui = { enable = true },
+  })
+
+  vim.keymap.set("n", "<leader>oo", "<cmd>Obsidian quick_switch<CR>", { desc = "[O]bsidian [O]pen/switch note" })
+  vim.keymap.set("n", "<leader>os", "<cmd>Obsidian search<CR>",       { desc = "[O]bsidian [S]earch (grep)" })
+  vim.keymap.set("n", "<leader>on", "<cmd>Obsidian new_from_template<CR>", { desc = "[O]bsidian [N]ew note (from template)" })
+  vim.keymap.set("n", "<leader>og", "<cmd>Obsidian tags<CR>",          { desc = "[O]bsidian ta[G]s" })
+  vim.keymap.set("n", "<leader>ot", "<cmd>Obsidian today<CR>",        { desc = "[O]bsidian [T]oday (daily note)" })
+  vim.keymap.set("n", "<leader>od", "<cmd>Obsidian dailies<CR>",      { desc = "[O]bsidian [D]ailies list" })
+  vim.keymap.set("n", "<leader>ob", "<cmd>Obsidian backlinks<CR>",    { desc = "[O]bsidian [B]acklinks" })
+  vim.keymap.set("n", "<leader>ol", "<cmd>Obsidian links<CR>",        { desc = "[O]bsidian [L]inks in note" })
+  vim.keymap.set("n", "<leader>oT", "<cmd>Obsidian template<CR>",     { desc = "[O]bsidian insert [T]emplate" })
+  vim.keymap.set("v", "<leader>oe", "<cmd>Obsidian extract_note<CR>", { desc = "[O]bsidian [E]xtract selection to note" })
+  -- follow link under cursor (only override gf inside markdown buffers)
+  vim.keymap.set("n", "gf", function()
+    return require("obsidian.api").cursor_link() and "<cmd>Obsidian follow_link<CR>" or "gf"
+  end, { expr = true, desc = "Follow note/file link" })
 
 end -- vim.g.vscode guard
 
