@@ -264,6 +264,8 @@ if not vim.g.vscode then
   require("zen-mode").setup({})
 
   -- Obsidian — edit the Obsidian vault from Neovim
+  local obsidian_vault = os.getenv("OBSIDIAN_VAULT")
+  if obsidian_vault then
   vim.pack.add({ "https://github.com/obsidian-nvim/obsidian.nvim" }, { confirm = false })
 
   -- built-in UI conceals links/checkboxes/refs only when conceallevel is set
@@ -275,7 +277,7 @@ if not vim.g.vscode then
   require("obsidian").setup({
     legacy_commands = false, -- use the single :Obsidian command
     workspaces = {
-      { name = "personal", path = "/home/matko/documents/Obsidian Vault" },
+      { name = "personal", path = obsidian_vault },
     },
 
     -- new notes -> Notes/, filename = the title as typed (human-readable)
@@ -327,6 +329,8 @@ if not vim.g.vscode then
   vim.keymap.set("n", "gf", function()
     return require("obsidian.api").cursor_link() and "<cmd>Obsidian follow_link<CR>" or "gf"
   end, { expr = true, desc = "Follow note/file link" })
+
+  end -- obsidian_vault guard
 
 end -- vim.g.vscode guard
 

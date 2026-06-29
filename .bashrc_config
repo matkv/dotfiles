@@ -6,6 +6,7 @@
 #     . $HOME/.bashrc_config
 # fi
 
+export OBSIDIAN_VAULT="$HOME/documents/Obsidian Vault"
 export GOPATH=$HOME/.go
 export PATH=$PATH:~/.go/bin/
 export PATH=$PATH:~/.cargo/bin/
