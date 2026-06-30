@@ -6,7 +6,11 @@
 #     . $HOME/.bashrc_config
 # fi
 
-export OBSIDIAN_VAULT="$HOME/documents/Obsidian Vault"
+# load device-specific config (paths, secrets)
+if [ -f $HOME/.env ]; then
+    . $HOME/.env
+fi
+
 export GOPATH=$HOME/.go
 export PATH=$PATH:~/.go/bin/
 export PATH=$PATH:~/.cargo/bin/
@@ -84,10 +88,6 @@ aliases() {
     rm "$tmp_output"
     echo
 }
-
-if [ -f $HOME/.env ]; then
-    . $HOME/.env
-fi
 
 cd ~
 fastfetch
