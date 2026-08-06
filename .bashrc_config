@@ -89,6 +89,8 @@ aliases() {
     echo
 }
 
+set -o vi
+
 cd ~
 fastfetch
 eval "$(starship init bash)"
