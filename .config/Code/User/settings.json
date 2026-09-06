@@ -31,7 +31,6 @@
     "asvetliakov.vscode-neovim": 1,
   },
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-  "keyboard.dispatch": "keyCode",
   "editor.stickyScroll.enabled": true,
   "excalidraw.theme": "dark",
   "security.allowedUNCHosts": ["wsl.localhost"],
@@ -54,7 +53,6 @@
   "vscode-neovim.compositeKeys": {},
   "remote.autoForwardPortsSource": "hybrid",
   "json.format.enable": false,
-  "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "chat.editing.confirmEditRequestRetry": false,
   "terminal.external.windowsExec": "C:\\\\Program Files\\\\WezTerm\\\\wezterm-gui.exe",
   "svelte.enable-ts-plugin": true,
@@ -73,23 +71,24 @@
   "window.density.editorTabHeight": "compact",
   "go.toolsGopath": "~/.go",
   "go.gopath": "~/.go",
-  "chat.agentSessionsViewLocation": "single-view",
-  "inlineChat.enableV2": true,
   "terminal.integrated.suggest.enabled": true,
   "go.diagnostic.vulncheck": "Imports",
   "chat.viewSessions.orientation": "stacked",
   "editor.rulers": [
     {
       "column": 100,
-      "color": "#d3d3d305"
-    }
+      "color": "#d3d3d305",
+    },
   ],
   "chat.tools.urls.autoApprove": {
     "https://code.visualstudio.com": true,
     "https://github.com/microsoft/vscode/wiki/*": true,
     "https://github.com": {
       "approveRequest": false,
-      "approveResponse": true
-    }
+      "approveResponse": true,
+    },
   },
+  "claudeCode.preferredLocation": "panel",
+  "github.copilot.nextEditSuggestions.eagerness": "low",
+  "workbench.experimental.modernUI": true,
 }
