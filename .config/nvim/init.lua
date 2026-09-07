@@ -35,7 +35,9 @@ o.textwidth = 80
 opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
 
 -- use new UI for nvim 0.12 - prevents some "Press ENTER" interactions
-require('vim._core.ui2').enable({})
+if not vim.g.vscode then
+  require('vim._core.ui2').enable({})
+end
 
 -- Diagnostics
 vim.diagnostic.config({
