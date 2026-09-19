@@ -1,0 +1,68 @@
+{
+	"schemaVersion": "0.1.0",
+	"name": "IMDb - Movies & TV Shows",
+	"behavior": "create",
+	"noteContentFormat": "",
+	"properties": [
+		{
+			"name": "index",
+			"value": "[[Movies & TV Shows]]",
+			"type": "text"
+		},
+		{
+			"name": "title",
+			"value": "{{schema:name}}",
+			"type": "text"
+		},
+		{
+			"name": "type",
+			"value": "{{title|replace:\"/.*TV (Mini )?Series.*/\":\"TV Show\"|replace:\"/^(?!TV Show$).+$/\":\"Movie\"}}",
+			"type": "text"
+		},
+		{
+			"name": "genre",
+			"value": "{{schema:genre}}",
+			"type": "multitext"
+		},
+		{
+			"name": "status",
+			"value": "To-Watch",
+			"type": "multitext"
+		},
+		{
+			"name": "year",
+			"value": "{{schema:datePublished|slice:0,4}}",
+			"type": "number"
+		},
+		{
+			"name": "rating",
+			"value": "",
+			"type": "number"
+		},
+		{
+			"name": "date",
+			"value": "",
+			"type": "date"
+		},
+		{
+			"name": "imdb",
+			"value": "{{schema:url}}",
+			"type": "text"
+		},
+		{
+			"name": "cover",
+			"value": "{{schema:image|replace:\"._V1_.jpg\":\"._V1_SX600.jpg\"}}",
+			"type": "text"
+		},
+		{
+			"name": "private",
+			"value": "false",
+			"type": "checkbox"
+		}
+	],
+	"triggers": [
+		"https://www.imdb.com/title/"
+	],
+	"noteNameFormat": "{{schema:name}} ({{schema:datePublished|slice:0,4}})",
+	"path": "Database/Index/Movies & TV Shows"
+}
