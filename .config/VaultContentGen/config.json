@@ -6,8 +6,6 @@
   "SectionTypes": {
     "Log": "Log",
     "Index": "Index",
-    "Garden": "Garden",
-    "Garden": "Standard",
     "Projects": "Project",
     "Library": "Book"
   }
