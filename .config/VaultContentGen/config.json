@@ -2,6 +2,7 @@
   "VaultSourcePath": "/home/matko/documents/Obsidian Vault/Notes/matkv.dev/",
   "HugoContentPath": "/home/matko/dev/matkv.dev/content/",
   "BookSourcePath": "/home/matko/documents/Obsidian Vault/Database/Index/Books",
+  "MovieSourcePath": "/home/matko/documents/Obsidian Vault/Database/Index/Movies & TV Shows",
   "IgnoredFolders": ["TEMPCLEANUP"],
   "SectionTypes": {
     "Log": "Log",
